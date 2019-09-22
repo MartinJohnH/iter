@@ -10,7 +10,8 @@ using UnityEngine.AI;
 [RequireComponent(typeof(Rigidbody))]
 public class GravityListener : MonoBehaviour
 {
-    public float rotationSpeed = 10.0f;
+    public float rotationSpeed = 180.0f;
+    public int rotationDelay = 30;
     
     private GravityController _gravityController;
     private Rigidbody _rigidbody;
@@ -60,16 +61,17 @@ public class GravityListener : MonoBehaviour
         
         Quaternion rotation = Quaternion.LookRotation(newForward, newUp);
 
-        while (!transform.rotation.Equals(rotation)){
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, rotationSpeed);
-            yield return new WaitForFixedUpdate();
-        }
+        int currentFrame = 0;
 
-        while (!IsGrounded())
+        do
         {
-            _rigidbody.AddForce(_gravity * Time.deltaTime, ForceMode.Acceleration);
+            _rigidbody.AddForce(_gravity * Time.deltaTime);
+            if (currentFrame++ > rotationDelay)
+            {
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
+            }
             yield return new WaitForFixedUpdate();
-        }
+        } while (!IsGrounded());
         
         if (agent)
         {

@@ -67,7 +67,7 @@ public class GravityListener : MonoBehaviour
 
         while (!IsGrounded())
         {
-            _rigidbody.AddForce(_gravity, ForceMode.Acceleration);
+            _rigidbody.AddForce(_gravity * Time.deltaTime, ForceMode.Acceleration);
             yield return new WaitForFixedUpdate();
         }
         

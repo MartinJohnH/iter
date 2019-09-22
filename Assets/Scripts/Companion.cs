@@ -11,7 +11,7 @@ public class Companion : MonoBehaviour
     public Transform player;
     public Transform tetherAnchor;
     public bool isTethered = true;
-    public float tetherRadius = 10.0f;
+    public float tetherRadius = 5.0f;
 
     private NavMeshAgent _navMeshAgent;
     private Animator _animator;
@@ -104,7 +104,7 @@ public class Companion : MonoBehaviour
 
     private void FollowPlayer()
     {
-        if ((player.transform.position - transform.position).sqrMagnitude > 2.0f)
+        if ((player.transform.position - transform.position).sqrMagnitude > 5.0f)
         {
             _navMeshAgent.SetDestination(player.transform.position);
             _navMeshAgent.updatePosition = true;

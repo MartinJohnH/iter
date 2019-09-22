@@ -29,7 +29,7 @@ public class CameraController : MonoBehaviour
 
     private void FollowPlayer()
     {
-        _rotation.x += -Input.GetAxis("Mouse Y");
+        _rotation.x += IsGravityNegative() ? -Input.GetAxis("Mouse Y") : Input.GetAxis("Mouse Y");
         _rotation.x = Mathf.Clamp(_rotation.x, lookMinAngle, lookMaxAngle);
         
         // Calculate the current rotation angles
@@ -55,8 +55,13 @@ public class CameraController : MonoBehaviour
         Quaternion rotation = Quaternion.LookRotation(direction.normalized);
         Vector3 angles = rotation.eulerAngles;
         angles.x = _rotation.x * speed;
-        angles.z = transform.rotation.eulerAngles.z;
+        angles.z = player.rotation.eulerAngles.z;
         transform.SetPositionAndRotation(position, Quaternion.Euler(angles));
     }
 
+    private bool IsGravityNegative()
+    {
+        Vector3 gravNormed = Physics.gravity.normalized;
+        return (gravNormed.x + gravNormed.y + gravNormed.z) < 0.0f;
+    }
 }

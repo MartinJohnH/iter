@@ -49,7 +49,7 @@ public class Camera : MonoBehaviour
         
         Vector3 position = player.position - (player.forward * followDistance) + (player.up * followHeight);
         Vector3 direction = player.position - transform.position;
-        Quaternion rotation = Quaternion.LookRotation(direction.normalized);
+        Quaternion rotation = Quaternion.LookRotation(direction.normalized, player.up);
         Vector3 angles = rotation.eulerAngles;
         angles.x = _rotation.x * speed;
         angles.z = transform.rotation.eulerAngles.z;

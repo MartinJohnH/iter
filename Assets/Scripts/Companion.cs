@@ -59,7 +59,7 @@ public class Companion : MonoBehaviour
             RenderTetheringRadius();
         }
         
-        _animator.SetFloat(Speed, _navMeshAgent.speed);
+        _animator.SetFloat(Speed, _navMeshAgent.velocity.sqrMagnitude);
     }
 
     private void RenderTetheringRadius()
@@ -103,10 +103,12 @@ public class Companion : MonoBehaviour
         if ((player.transform.position - transform.position).sqrMagnitude > 2.0f)
         {
             _navMeshAgent.SetDestination(player.transform.position);
+            _navMeshAgent.updatePosition = true;
         }
         else
         {
             _navMeshAgent.isStopped = true;
+            _navMeshAgent.updatePosition = false;
             _navMeshAgent.ResetPath();
         }
     }

@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Experimental.UIElements;
 
+[RequireComponent(typeof(LineRenderer))]
+[RequireComponent(typeof(NavMeshAgent))]
 public class Companion : MonoBehaviour
 {
     public Transform player;
@@ -47,16 +49,19 @@ public class Companion : MonoBehaviour
                 ToggleTether();
             }
         }
-        
-        if (isTethered)
+
+        if (_navMeshAgent.enabled)
         {
-            RenderTether();
-            FollowPlayer();
-        }
-        else
-        {
-            _navMeshAgent.ResetPath();
-            RenderTetheringRadius();
+            if (isTethered)
+            {
+                RenderTether();
+                FollowPlayer();
+            }
+            else
+            {
+                _navMeshAgent.ResetPath();
+                RenderTetheringRadius();
+            }
         }
         
         _animator.SetFloat(Speed, _navMeshAgent.velocity.sqrMagnitude);
@@ -65,7 +70,6 @@ public class Companion : MonoBehaviour
     private void RenderTetheringRadius()
     {
         float x;
-        float y;
         float z;
 
         float angle = 20f;

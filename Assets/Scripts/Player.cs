@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using Vector3 = UnityEngine.Vector3;
 
+[RequireComponent(typeof(NavMeshAgent))]
 public class Player : MonoBehaviour
 {
     private NavMeshAgent _navMeshAgent;
@@ -31,13 +32,16 @@ public class Player : MonoBehaviour
             
         bool isMovePressed = Math.Abs(translation) > 0.01f || Math.Abs(rotation) > 0.01f;
 
-        if (isMovePressed)
+        if (_navMeshAgent.enabled)
         {
-            MovePlayer(translation, rotation);
-        }
-        else
-        {
-            StopPlayer();
+            if (isMovePressed)
+            {
+                MovePlayer(translation, rotation);
+            }
+            else
+            {
+                StopPlayer();
+            }
         }
         
         _animator.SetFloat(Speed, _navMeshAgent.speed);

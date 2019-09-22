@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Layers
+public class Layers
 {
-    Floor = 9,
-    Player = 10
+    public static readonly int Floor = 9;
+    public static readonly int Player = 10;
 }

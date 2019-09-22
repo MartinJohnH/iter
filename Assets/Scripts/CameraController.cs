@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Camera : MonoBehaviour
+public class CameraController : MonoBehaviour
 {
     public Transform player;
     public float speed = 3.0f;
@@ -10,7 +10,10 @@ public class Camera : MonoBehaviour
     public float followHeight = 4.0f;
     public float heightDamping = 2.0f;
     public float rotationDamping = 5.0f;
-    public bool shouldRotate = true;
+    [Range(-45.0f, -15.0f)]
+    public float lookMinAngle = -20.0f;
+    [Range(15.0f, 45.0f)]
+    public float lookMaxAngle = 20.0f;
     
     private Vector2 _rotation = Vector2.zero;
     private float _wantedRotationAngle;
@@ -27,7 +30,7 @@ public class Camera : MonoBehaviour
     private void FollowPlayer()
     {
         _rotation.x += -Input.GetAxis("Mouse Y");
-        _rotation.x = Mathf.Clamp(_rotation.x, -15f, 15f);
+        _rotation.x = Mathf.Clamp(_rotation.x, lookMinAngle, lookMaxAngle);
         
         // Calculate the current rotation angles
         _wantedRotationAngle = player.eulerAngles.y;
@@ -49,7 +52,7 @@ public class Camera : MonoBehaviour
         
         Vector3 position = player.position - (player.forward * followDistance) + (player.up * followHeight);
         Vector3 direction = player.position - transform.position;
-        Quaternion rotation = Quaternion.LookRotation(direction.normalized, player.up);
+        Quaternion rotation = Quaternion.LookRotation(direction.normalized);
         Vector3 angles = rotation.eulerAngles;
         angles.x = _rotation.x * speed;
         angles.z = transform.rotation.eulerAngles.z;

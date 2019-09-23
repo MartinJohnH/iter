@@ -18,7 +18,6 @@ public class Companion : MonoBehaviour
     private LineRenderer _lineRenderer;
     private static readonly int Speed = Animator.StringToHash("speed");
 
-    // Start is called before the first frame update
     void Start()
     {
         _lineRenderer = GetComponent<LineRenderer>();
@@ -52,6 +51,8 @@ public class Companion : MonoBehaviour
 
         if (_navMeshAgent.enabled)
         {
+            _lineRenderer.enabled = true;
+            
             if (isTethered)
             {
                 RenderTether();
@@ -63,8 +64,15 @@ public class Companion : MonoBehaviour
                 RenderTetheringRadius();
             }
         }
-        
-        _animator.SetFloat(Speed, _navMeshAgent.velocity.sqrMagnitude);
+        else
+        {
+            _lineRenderer.enabled = false;
+        }
+
+        if (_animator)
+        {
+            _animator.SetFloat(Speed, _navMeshAgent.velocity.sqrMagnitude);
+        }
     }
 
     private void RenderTetheringRadius()

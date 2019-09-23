@@ -52,6 +52,7 @@ public class GravityController : MonoBehaviour
             }
 
             _lastDirection = direction;
+            Physics.gravity = g;
             foreach (GravityListener listener in gravityListeners)
             {
                 listener.OnGravityChange(g);

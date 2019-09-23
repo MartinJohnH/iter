@@ -11,7 +11,7 @@ using UnityEngine.AI;
 public class GravityListener : MonoBehaviour
 {
     public float rotationSpeed = 180.0f;
-    public int rotationDelay = 30;
+    public int rotationDelay = 60;
     
     private GravityController _gravityController;
     private Rigidbody _rigidbody;
@@ -32,7 +32,6 @@ public class GravityListener : MonoBehaviour
     public void OnGravityChange(Vector3 newGravity)
     {
         _gravity = newGravity;
-        Physics.gravity = newGravity;
         
         Vector3 normalizedGravity = newGravity.normalized;
         Vector3 newUp = normalizedGravity * -1.0f;
@@ -53,31 +52,33 @@ public class GravityListener : MonoBehaviour
         NavMeshAgent agent = GetComponent<NavMeshAgent>();
         if (agent)
         {
-            agent.updatePosition = false;
-            agent.updateRotation = false;
-            agent.updateUpAxis = false;
             agent.enabled = false;
         }
         
         Quaternion rotation = Quaternion.LookRotation(newForward, newUp);
 
         int currentFrame = 0;
-
-        do
+        
+        while (currentFrame++ < rotationDelay)
         {
-            _rigidbody.AddForce(_gravity * Time.deltaTime);
-            if (currentFrame++ > rotationDelay)
-            {
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
-            }
             yield return new WaitForFixedUpdate();
-        } while (!IsGrounded());
+        }
+
+        while (!transform.rotation.Equals(rotation))
+        {
+            _rigidbody.velocity = _rigidbody.velocity * 0.5f;
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
+            yield return new WaitForFixedUpdate();
+        }
+
+        while (!IsGrounded())
+        {
+            yield return new WaitForFixedUpdate();
+        }
+
         
         if (agent)
         {
-            agent.updatePosition = true;
-            agent.updateRotation = true;
-            agent.updateUpAxis = true;
             agent.enabled = true;
         }
         

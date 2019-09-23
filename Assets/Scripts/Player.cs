@@ -16,7 +16,6 @@ public class Player : MonoBehaviour
     public float rotationSpeed = 2.0f;
     private static readonly int Speed = Animator.StringToHash("speed");
 
-    // Start is called before the first frame update
     void Start()
     {
         _animator = GetComponent<Animator>();
@@ -24,7 +23,6 @@ public class Player : MonoBehaviour
         _navMeshAgent.ResetPath();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         float translation = Input.GetAxis("Vertical") * runSpeed;

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.245
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.22414166, g: 0.25187558, b: 0.29550973, a: 0.245}
+  m_IndirectSpecularColor: {r: 0.22414187, g: 0.25187576, b: 0.29550993, a: 0.245}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2164,7 +2164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5c27a772cd3d47ccb8c8982f7fa66f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1238233108}
+  player: {fileID: 1238233109}
   tetherAnchor: {fileID: 674645593}
   isTethered: 1
   tetherRadius: 5
@@ -3179,6 +3179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23eea24a25613476a9ea970f309f944b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  companion: {fileID: 862272957}
   runSpeed: 5
   rotationSpeed: 2
 --- !u!195 &1238233110

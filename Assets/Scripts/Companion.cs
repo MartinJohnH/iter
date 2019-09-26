@@ -8,7 +8,7 @@ using UnityEngine.Experimental.UIElements;
 [RequireComponent(typeof(NavMeshAgent))]
 public class Companion : MonoBehaviour
 {
-    public Transform player;
+    public Player player;
     public Transform tetherAnchor;
     public bool isTethered = true;
     public float tetherRadius = 5.0f;
@@ -34,10 +34,9 @@ public class Companion : MonoBehaviour
         _lineRenderer.positionCount = 2;
         _lineRenderer.useWorldSpace = true;
         _lineRenderer.SetPosition(0, tetherAnchor.position);
-        _lineRenderer.SetPosition(1, player.position);
+        _lineRenderer.SetPosition(1, player.transform.position);
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -57,6 +56,7 @@ public class Companion : MonoBehaviour
             {
                 RenderTether();
                 FollowPlayer();
+                player.ToggleHeldBack(!IsCloseEnoughToTether());
             }
             else
             {
@@ -107,7 +107,7 @@ public class Companion : MonoBehaviour
 
     private bool IsCloseEnoughToTether()
     {
-        return Vector3.Distance(transform.position, player.position) < tetherRadius;
+        return Vector3.Distance(transform.position, player.transform.position) < tetherRadius;
     }
 
     private void FollowPlayer()

@@ -12,9 +12,11 @@ public class Player : MonoBehaviour
     private NavMeshAgent _navMeshAgent;
     private Animator _animator;
 
+    public Companion companion;
     public float runSpeed = 5.0f;
     public float rotationSpeed = 2.0f;
     private static readonly int Speed = Animator.StringToHash("speed");
+    private bool _isHeldBack = false;
 
     void Start()
     {
@@ -23,7 +25,7 @@ public class Player : MonoBehaviour
         _navMeshAgent.ResetPath();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         float translation = Input.GetAxis("Vertical") * runSpeed;
         float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
@@ -53,14 +55,34 @@ public class Player : MonoBehaviour
         _navMeshAgent.isStopped = true;
     }
 
+    public void ToggleHeldBack(bool isHeldBack)
+    {
+        this._isHeldBack = isHeldBack;
+    }
+
     private void MovePlayer(float translation, float rotation)
     {
         Vector3 velocityForward = transform.forward * translation;
         Vector3 velocitySideways = transform.right * rotation;
         Vector3 resultantVelocity = velocityForward + velocitySideways;
+        Vector3 destination = resultantVelocity + transform.position;
+
+        if (_isHeldBack)
+        {
+            Vector3 destFlat = new Vector3(destination.x, 0, destination.z).normalized;
+            Vector3 companionDirection = (companion.transform.position - transform.position).normalized;
+            Vector3 companionFlat = new Vector3(companionDirection.x, 0, companionDirection.z);
+            float dot = Vector3.Dot(destFlat, companionFlat);
+            if (Vector3.Dot(destFlat, companionFlat) < -0.5f)
+            {
+                Debug.Log(dot);
+                return;
+            }
+        }
+        
         _navMeshAgent.speed = resultantVelocity.magnitude;
         _navMeshAgent.velocity = resultantVelocity;
         _navMeshAgent.updateRotation = translation > 0.0f || Math.Abs(rotation) > 0.0f;
-        _navMeshAgent.SetDestination(resultantVelocity + transform.position);
+        _navMeshAgent.SetDestination(destination);
     }
 }

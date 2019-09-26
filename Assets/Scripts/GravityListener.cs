@@ -22,6 +22,8 @@ public class GravityListener : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
         _gravityController = FindObjectOfType<GravityController>();
         _gravityController.register(this);
+
+        _rigidbody.freezeRotation = true;
     }
 
     private void OnDestroy()

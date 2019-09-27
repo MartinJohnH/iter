@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
 {
     private NavMeshAgent _navMeshAgent;
     private Animator _animator;
+    private Collider _collider;
 
     public Companion companion;
     public float runSpeed = 5.0f;
@@ -20,6 +21,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        _collider = GetComponent<Collider>();
         _animator = GetComponent<Animator>();
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _navMeshAgent.ResetPath();
@@ -43,8 +45,32 @@ public class Player : MonoBehaviour
                 StopPlayer();
             }
         }
+
         
         _animator.SetFloat(Speed, _navMeshAgent.speed);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Entered");
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            AttemptToUse(other);
+        }
+    }
+
+    private void AttemptToUse(Collider other)
+    {
+        Debug.Log("attempting to use");
+        Usable usable = other.gameObject.GetComponent<Usable>();
+        if (usable)
+        {
+            usable.Use();
+        }
     }
 
     private void StopPlayer()

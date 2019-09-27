@@ -69,4 +69,9 @@ public class GravityController : MonoBehaviour
     {
         gravityListeners.Remove(gravityListener);
     }
+
+    public void SetGravityDirectionUp()
+    {
+        this.direction = Direction.Up;
+    }
 }

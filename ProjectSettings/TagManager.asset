@@ -14,10 +14,10 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - Floor
+  - Walkable
   - Player
-  - Ceiling
-  - 
+  - Companion
+  - Usable
   - 
   - 
   - 

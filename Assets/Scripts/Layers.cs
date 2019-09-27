@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Layers
 {
-    public static readonly int Floor = 9;
+    public static readonly int Walkable = 9;
     public static readonly int Player = 10;
+    public static readonly int Companion = 11;
+    public static readonly int Usable = 12;
 }

@@ -50,11 +50,6 @@ public class Player : MonoBehaviour
         _animator.SetFloat(Speed, _navMeshAgent.speed);
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("Entered");
-    }
-
     private void OnTriggerStay(Collider other)
     {
         if (Input.GetButtonDown("Fire1"))
@@ -65,7 +60,6 @@ public class Player : MonoBehaviour
 
     private void AttemptToUse(Collider other)
     {
-        Debug.Log("attempting to use");
         Usable usable = other.gameObject.GetComponent<Usable>();
         if (usable)
         {
@@ -101,7 +95,6 @@ public class Player : MonoBehaviour
             float dot = Vector3.Dot(destFlat, companionFlat);
             if (Vector3.Dot(destFlat, companionFlat) < -0.5f)
             {
-                Debug.Log(dot);
                 return;
             }
         }

@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        float translation = Input.GetAxis("Vertical") * runSpeed;
+        float translation = companion.isTethered ? Input.GetAxis("Vertical") : Input.GetAxis("Vertical") * runSpeed;
         float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
             
         bool isMovePressed = Math.Abs(translation) > 0.01f || Math.Abs(rotation) > 0.01f;

@@ -1162,7 +1162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   companion: {fileID: 1727151788}
   tetherAnchor: {fileID: 1012485046}
-  runSpeed: 1
+  runSpeed: 3
   rotationSpeed: 2
 --- !u!4 &911404968 stripped
 Transform:

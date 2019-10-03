@@ -74,4 +74,29 @@ public class GravityController : MonoBehaviour
     {
         this.direction = Direction.Up;
     }
+    
+    public void SetGravityDirectionDown()
+    {
+        this.direction = Direction.Down;
+    }
+    
+    public void SetGravityDirectionLeft()
+    {
+        this.direction = Direction.Left;
+    }
+    
+    public void SetGravityDirectionRight()
+    {
+        this.direction = Direction.Right;
+    }
+    
+    public void SetGravityDirectionForward()
+    {
+        this.direction = Direction.Forward;
+    }
+    
+    public void SetGravityDirectionBack()
+    {
+        this.direction = Direction.Back;
+    }
 }

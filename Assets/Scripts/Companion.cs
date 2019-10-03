@@ -31,7 +31,7 @@ public class Companion : MonoBehaviour
         _lineRenderer.positionCount = 2;
         _lineRenderer.useWorldSpace = true;
         _lineRenderer.SetPosition(0, tetherAnchor.position);
-        _lineRenderer.SetPosition(1, player.transform.position);
+        _lineRenderer.SetPosition(1, player.tetherAnchor.position);
     }
 
     void Update()
@@ -53,7 +53,11 @@ public class Companion : MonoBehaviour
             {
                 RenderTether();
                 FollowPlayer();
-                player.ToggleHeldBack(!IsCloseEnoughToTether());
+//                player.ToggleHeldBack(!IsCloseEnoughToTether());
+                if (!IsCloseEnoughToTether())
+                {
+                    ToggleTether();
+                }
             }
             else
             {
@@ -96,9 +100,13 @@ public class Companion : MonoBehaviour
 
     private void ToggleTether()
     {
-        if (IsCloseEnoughToTether())
+        if (!isTethered && IsCloseEnoughToTether())
         {
-            isTethered = !isTethered;
+            isTethered = true;
+        }
+        else
+        {
+            isTethered = false;
         }
     }
 

@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     private Collider _collider;
 
     public Companion companion;
+    public Transform tetherAnchor;
     public float runSpeed = 5.0f;
     public float rotationSpeed = 2.0f;
     private static readonly int Speed = Animator.StringToHash("speed");
@@ -82,6 +83,10 @@ public class Player : MonoBehaviour
 
     private void MovePlayer(float translation, float rotation)
     {
+        if (_navMeshAgent.isOnOffMeshLink)
+        {
+            _navMeshAgent.CompleteOffMeshLink();
+        }
         Vector3 velocityForward = transform.forward * translation;
         Vector3 velocitySideways = transform.right * rotation;
         Vector3 resultantVelocity = velocityForward + velocitySideways;
@@ -93,7 +98,7 @@ public class Player : MonoBehaviour
             Vector3 companionDirection = (companion.transform.position - transform.position).normalized;
             Vector3 companionFlat = new Vector3(companionDirection.x, 0, companionDirection.z);
             float dot = Vector3.Dot(destFlat, companionFlat);
-            if (Vector3.Dot(destFlat, companionFlat) < -0.5f)
+            if (dot < -0.5f)
             {
                 return;
             }

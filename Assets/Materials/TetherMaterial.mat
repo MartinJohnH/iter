@@ -11,8 +11,8 @@ Material:
   m_Shader: {fileID: 4800000, guid: 942da842f82e54bc190e60c1b9d3a585, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 0
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses:
@@ -80,7 +80,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_ECACD17E: {r: 9.081475, g: 9.189588, b: 0, a: 0}
+    - Color_ECACD17E: {r: 2.273454, g: 2.297397, b: 0.010836803, a: 1}
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 4, g: 3.9215686, b: 0, a: 1}

@@ -20,6 +20,7 @@ public class Companion : MonoBehaviour
         _lineRenderer = GetComponent<LineRenderer>();
         _animator = GetComponent<Animator>();
         _navMeshAgent = GetComponent<NavMeshAgent>();
+        GetComponent<Rigidbody>().isKinematic = true;
         _navMeshAgent.ResetPath();
 
         _lineRenderer.positionCount = 2;

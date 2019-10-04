@@ -25,12 +25,13 @@ public class Player : MonoBehaviour
         _collider = GetComponent<Collider>();
         _animator = GetComponent<Animator>();
         _navMeshAgent = GetComponent<NavMeshAgent>();
+        GetComponent<Rigidbody>().isKinematic = true;
         _navMeshAgent.ResetPath();
     }
 
     void Update()
     {
-        float translation = companion.isTethered ? Input.GetAxis("Vertical") : Input.GetAxis("Vertical") * runSpeed;
+        float translation = companion.isTethered ? Input.GetAxis("Vertical") * (runSpeed/2.0f) : Input.GetAxis("Vertical") * runSpeed;
         float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
             
         bool isMovePressed = Math.Abs(translation) > 0.01f || Math.Abs(rotation) > 0.01f;
@@ -53,6 +54,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        Debug.Log("trigger");
         if (Input.GetButtonDown("Fire1"))
         {
             AttemptToUse(other);

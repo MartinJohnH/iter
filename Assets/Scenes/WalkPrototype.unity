@@ -8579,9 +8579,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 911404967}
   tetherAnchor: {fileID: 919459764}
-  dissolveMaterial: {fileID: 0}
+  dissolveMaterial: {fileID: 2100000, guid: 407ca1b23b98b4bf1acc8b36d159d909, type: 2}
   isTethered: 1
   tetherRadius: 5
+  dissolveTimeLimit: 30
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  onDeathCanceled:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1727151789 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: e41fc4b6b1cc34a6783ba6c6f04b8dfc,

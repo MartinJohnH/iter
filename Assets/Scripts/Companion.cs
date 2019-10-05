@@ -1,5 +1,8 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(LineRenderer))]
 [RequireComponent(typeof(NavMeshAgent))]
@@ -10,22 +13,37 @@ public class Companion : MonoBehaviour
     public Material dissolveMaterial;
     public bool isTethered = true;
     public float tetherRadius = 5.0f;
-    
+    public float dissolveTimeLimit = 10.0f;
+    public UnityEvent onDeath;
+    public UnityEvent onDeathCanceled;
+
+    private bool _isDying = false;
     private NavMeshAgent _navMeshAgent;
+    private SkinnedMeshRenderer[] _meshRenderers;
+    private Material[] defaultMaterials;
     private Animator _animator;
     private LineRenderer _lineRenderer;
     private static readonly int Speed = Animator.StringToHash("speed");
+    private static readonly int Progress = Shader.PropertyToID("Vector1_47ABB1D2");
 
     void Start()
     {
         _lineRenderer = GetComponent<LineRenderer>();
         _animator = GetComponent<Animator>();
         _navMeshAgent = GetComponent<NavMeshAgent>();
+        _meshRenderers = GetComponentsInChildren<SkinnedMeshRenderer>();
+        defaultMaterials = new Material[_meshRenderers.Length];
+
         GetComponent<Rigidbody>().isKinematic = true;
         _navMeshAgent.ResetPath();
 
         _lineRenderer.positionCount = 2;
         RenderTether();
+        
+        for (int i = 0; i < _meshRenderers.Length; i++)
+        {
+            defaultMaterials[i] = _meshRenderers[i].material;
+        }
     }
 
     private void RenderTether()
@@ -55,7 +73,6 @@ public class Companion : MonoBehaviour
             {
                 RenderTether();
                 FollowPlayer();
-//                player.ToggleHeldBack(!IsCloseEnoughToTether());
                 if (!IsCloseEnoughToTether())
                 {
                     ToggleTether();
@@ -76,6 +93,46 @@ public class Companion : MonoBehaviour
         {
             _animator.SetFloat(Speed, _navMeshAgent.velocity.sqrMagnitude);
         }
+    }
+
+    private IEnumerator StartDissolve()
+    {
+        _isDying = true;
+        
+        float stepAmount = 0.01f;
+        float stepTime = stepAmount * dissolveTimeLimit;
+        float progress = 0.0f;
+        
+        foreach (SkinnedMeshRenderer meshRenderer in _meshRenderers)
+        {
+            meshRenderer.material = dissolveMaterial;
+        }
+        
+        while (progress <= 1.0f)
+        {
+            foreach (SkinnedMeshRenderer meshRenderer in _meshRenderers)
+            {
+                meshRenderer.material.SetFloat(Progress, progress);
+            }
+
+            progress += stepAmount;
+
+            yield return new WaitForSeconds(stepTime);
+        }
+
+        onDeath?.Invoke();
+    }
+
+    private void CancelDissolve()
+    {
+        _isDying = false;
+        
+        for (int i = 0; i < _meshRenderers.Length; i++)
+        {
+            _meshRenderers[i].material = defaultMaterials[i];
+        }
+        
+        onDeathCanceled?.Invoke();
     }
 
     private void RenderTetheringRadius()
@@ -105,10 +162,19 @@ public class Companion : MonoBehaviour
         if (!isTethered && IsCloseEnoughToTether())
         {
             isTethered = true;
+            if (_isDying)
+            {
+                StopCoroutine(StartDissolve());
+                CancelDissolve();
+            }
         }
         else
         {
             isTethered = false;
+            if (!_isDying)
+            {
+                StartCoroutine(StartDissolve());
+            }
         }
     }
 

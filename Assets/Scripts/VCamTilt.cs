@@ -7,6 +7,9 @@ using UnityEngine.Experimental.PlayerLoop;
 
 public class VCamTilt : MonoBehaviour
 {
+    [Range(0.0f, 10.0f)]
+    public float maxTilt = 3.0f;
+    
     private CinemachineVirtualCamera _virtualCamera;
     private CinemachineComposer _composer;
     private float _mouseY = 0.0f;
@@ -27,6 +30,7 @@ public class VCamTilt : MonoBehaviour
     private void TrackVertical()
     {
         _mouseY += Input.GetAxis("Mouse Y");
+        _mouseY = Mathf.Clamp(_mouseY, 0.0f, maxTilt);
         _composer.m_TrackedObjectOffset.y = _yOffset + _mouseY;
     }
     

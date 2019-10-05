@@ -15,8 +15,8 @@ public class Player : MonoBehaviour
 
     public Companion companion;
     public Transform tetherAnchor;
-    public float runSpeed = 5.0f;
-    public float rotationSpeed = 2.0f;
+    public float runSpeed = 8.0f;
+    public float rotationSpeed = 1.0f;
     private static readonly int Speed = Animator.StringToHash("speed");
     private bool _isHeldBack = false;
 

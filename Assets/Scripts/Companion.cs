@@ -7,9 +7,10 @@ public class Companion : MonoBehaviour
 {
     public Player player;
     public Transform tetherAnchor;
+    public Material dissolveMaterial;
     public bool isTethered = true;
     public float tetherRadius = 5.0f;
-
+    
     private NavMeshAgent _navMeshAgent;
     private Animator _animator;
     private LineRenderer _lineRenderer;

@@ -66,11 +66,15 @@ public class GravityListener : MonoBehaviour
         int currentFrame = 0;
 
         _animator.SetBool(IsFalling, true);
-        
+
+        _rigidbody.useGravity = false;
+        Vector3 normal = transform.up;
         while (currentFrame++ < rotationDelay)
         {
+            _rigidbody.AddForce(Time.deltaTime * 9.8f * normal, ForceMode.VelocityChange);
             yield return new WaitForFixedUpdate();
         }
+        _rigidbody.useGravity = true;
 
         while (!transform.rotation.Equals(rotation))
         {

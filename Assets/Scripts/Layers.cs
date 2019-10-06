@@ -8,4 +8,5 @@ public class Layers
     public static readonly int Player = 10;
     public static readonly int Companion = 11;
     public static readonly int Usable = 12;
+    public static readonly int Light = 13;
 }

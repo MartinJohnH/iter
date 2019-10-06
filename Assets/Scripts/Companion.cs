@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -17,10 +18,11 @@ public class Companion : MonoBehaviour
     public UnityEvent onDeath;
     public UnityEvent onDeathCanceled;
 
+    private int _framesBeforeLightTouch = 0;
     private bool _isDying = false;
     private NavMeshAgent _navMeshAgent;
     private SkinnedMeshRenderer[] _meshRenderers;
-    private Material[] defaultMaterials;
+    private Material[] _defaultMaterials;
     private Animator _animator;
     private LineRenderer _lineRenderer;
     private static readonly int Speed = Animator.StringToHash("speed");
@@ -32,7 +34,7 @@ public class Companion : MonoBehaviour
         _animator = GetComponent<Animator>();
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _meshRenderers = GetComponentsInChildren<SkinnedMeshRenderer>();
-        defaultMaterials = new Material[_meshRenderers.Length];
+        _defaultMaterials = new Material[_meshRenderers.Length];
 
         GetComponent<Rigidbody>().isKinematic = true;
         _navMeshAgent.ResetPath();
@@ -42,7 +44,7 @@ public class Companion : MonoBehaviour
         
         for (int i = 0; i < _meshRenderers.Length; i++)
         {
-            defaultMaterials[i] = _meshRenderers[i].material;
+            _defaultMaterials[i] = _meshRenderers[i].material;
         }
     }
 
@@ -129,7 +131,7 @@ public class Companion : MonoBehaviour
         
         for (int i = 0; i < _meshRenderers.Length; i++)
         {
-            _meshRenderers[i].material = defaultMaterials[i];
+            _meshRenderers[i].material = _defaultMaterials[i];
         }
         
         onDeathCanceled?.Invoke();
@@ -195,6 +197,18 @@ public class Companion : MonoBehaviour
             _navMeshAgent.isStopped = true;
             _navMeshAgent.updatePosition = false;
             _navMeshAgent.ResetPath();
+        }
+    }
+    
+    private void OnTriggerStay(Collider other)
+    {
+        int layer = other.gameObject.layer;
+        _framesBeforeLightTouch = (++_framesBeforeLightTouch % 20);
+
+        if (layer == Layers.Light && isTethered && _framesBeforeLightTouch == 0)
+        {
+            ToggleTether();
+            _framesBeforeLightTouch = 0;
         }
     }
 }

@@ -16,8 +16,11 @@ public class Companion : MonoBehaviour
     public float tetherRadius = 5.0f;
     public float dissolveTimeLimit = 10.0f;
     public UnityEvent onDeath;
+    public UnityEvent onDeathTick;
     public UnityEvent onDeathCanceled;
 
+    private IEnumerator _dissolveCoroutine;
+    private IEnumerator _tickCoroutine;
     private int _framesBeforeLightTouch = 0;
     private bool _isDying = false;
     private NavMeshAgent _navMeshAgent;
@@ -97,6 +100,17 @@ public class Companion : MonoBehaviour
         }
     }
 
+    private IEnumerator MakeTick()
+    {
+        float time = dissolveTimeLimit;
+        while (time > 0.0f)
+        {
+            onDeathTick?.Invoke();
+            time -= 1.0f;
+            yield return new WaitForSeconds(1.0f);
+        }
+    }
+
     private IEnumerator StartDissolve()
     {
         _isDying = true;
@@ -112,13 +126,8 @@ public class Companion : MonoBehaviour
         
         while (progress <= 1.0f)
         {
-            foreach (SkinnedMeshRenderer meshRenderer in _meshRenderers)
-            {
-                meshRenderer.material.SetFloat(Progress, progress);
-            }
-
+            dissolveMaterial.SetFloat(Progress, progress);
             progress += stepAmount;
-
             yield return new WaitForSeconds(stepTime);
         }
 
@@ -127,7 +136,12 @@ public class Companion : MonoBehaviour
 
     private void CancelDissolve()
     {
+        StopCoroutine(_dissolveCoroutine);
+        StopCoroutine(_tickCoroutine);
+        
         _isDying = false;
+        
+        dissolveMaterial.SetFloat(Progress, 0.0f);
         
         for (int i = 0; i < _meshRenderers.Length; i++)
         {
@@ -166,7 +180,6 @@ public class Companion : MonoBehaviour
             isTethered = true;
             if (_isDying)
             {
-                StopCoroutine(StartDissolve());
                 CancelDissolve();
             }
         }
@@ -175,7 +188,10 @@ public class Companion : MonoBehaviour
             isTethered = false;
             if (!_isDying)
             {
-                StartCoroutine(StartDissolve());
+                _dissolveCoroutine = StartDissolve();
+                _tickCoroutine = MakeTick();
+                StartCoroutine(_dissolveCoroutine);
+                StartCoroutine(_tickCoroutine);
             }
         }
     }

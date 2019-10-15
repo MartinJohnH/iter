@@ -3,7 +3,12 @@ guid: 96a2c90d307c64eaf9f6536c72d0de28
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 10081_Park_Statue_V3_Max2011Mat
+    second: {fileID: 2100000, guid: 09fee1a2823864594b48c42d8b608068, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: glow
+  m_Name: glow 1
   m_Shader: {fileID: -6465566751694194690, guid: d06e82f4d26944903b5d8496e7658f3b,
     type: 3}
   m_ShaderKeywords: 
@@ -67,10 +67,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_494665DE: 1.93
-    - Vector1_91D4E50F: 50.6
+    - Vector1_494665DE: 2
+    - Vector1_91D4E50F: 5
     - Vector1_D3C1B3CA: 0.005
-    - Vector1_ED88A2BA: 2.6
+    - Vector1_ED88A2BA: 0.025
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1

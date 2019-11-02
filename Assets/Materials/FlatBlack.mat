@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-1630917370572087029
+--- !u!114 &-2406601863030161957
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,9 +20,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Palette
+  m_Name: FlatBlack
   m_Shader: {fileID: 4800000, guid: 1a48b2f33a6b38545b8a1564a9127834, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: RAW_OUTLINE
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -33,30 +33,26 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_30FEF525:
-        m_Texture: {fileID: 2800000, guid: 66c5cdd1b6cfc8745afa9ad9f7cc0d1d, type: 3}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_985B7E6E:
+        m_Texture: {fileID: 2800000, guid: a22489c78950c471b99b7947851f13e6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_DC6DF663:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_F611A408:
-        m_Texture: {fileID: 2800000, guid: f05e70052e5eb204ca3d56de39029713, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 66c5cdd1b6cfc8745afa9ad9f7cc0d1d, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9a00cf6ba87d245c6bb681daf31ae890, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailAlbedoMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailMask:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailNormalMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -64,8 +60,20 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _EmmisTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _HatchMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _HatchTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 66c5cdd1b6cfc8745afa9ad9f7cc0d1d, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -76,8 +84,12 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _ParallaxMap:
+    - _RoughMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleCubemap_74771035_Cube_1:
+        m_Texture: {fileID: 8900000, guid: 24b73049cd1f12c4680315db59c22d88, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -85,38 +97,78 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_3CFD09B5: 0.1
-    - Vector1_8386A876: 0
-    - Vector1_98063928: 0.5
+    - Vector1_29C6AB4C: 1
+    - Vector1_3CFD09B5: 0.106
+    - Vector1_46F4FBA0: 1
+    - Vector1_494665DE: 2
+    - Vector1_8386A876: 0.063
+    - Vector1_91D4E50F: 1
+    - Vector1_98063928: 0.49
+    - Vector1_ADAD9479: 0
     - Vector1_C5F28BFB: 0.5
+    - Vector1_D3C1B3CA: 0.005
+    - Vector1_E023A9A8: 1
+    - Vector1_ED88A2BA: 0.2
+    - Vector1_EDBEEB4E: 0
+    - Vector1_EE54776A: 20
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
+    - _ColorRampIntensity: 0
+    - _ColoredHatch: 0
     - _Cull: 2
     - _Cutoff: 0.5
-    - _DetailNormalMapScale: 1
+    - _Delta: 0.0009
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _GlossMapScale: 1
-    - _Glossiness: 0.5
-    - _GlossyReflections: 1
+    - _FresnelBrightness: 0
+    - _FresnelPower: 0
+    - _FresnelShadowDropoff: 0
+    - _GlossMapScale: 0
+    - _Glossiness: 0
+    - _GlossyReflections: 0
+    - _GradIntensity: 0.3
+    - _GradYCap: 1
+    - _HatchIntensity: 1
+    - _HatchRampIntensity: 0
+    - _HighIntensity: 1.5
+    - _LightScalar: 1
+    - _LowIntensity: 1
     - _Metallic: 0
-    - _Mode: 0
     - _OcclusionStrength: 1
-    - _Parallax: 0.02
+    - _Outline: 0.0086
+    - _OutlineSize: 10
+    - _PatternSize: 100
+    - _Poseterize: 0
+    - _PosterizationCount: 8
     - _QueueOffset: 0
+    - _RampLevels: 2
+    - _RampSteps: 1
+    - _Raw: 1
     - _ReceiveShadows: 1
+    - _RimAlpha: 0
+    - _RimDropOff: 0
+    - _RimPower: 0
+    - _Roughness: 1
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
-    - _UVSec: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
+    - Color_A5593629: {r: 1, g: 1, b: 1, a: 0}
+    - Color_DAC4E11B: {r: 1, g: 1, b: 1, a: 0}
     - Color_DEB3AA71: {r: 1, g: 0.8623325, b: 0.080188684, a: 0}
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - Color_FDC1EDAD: {r: 0, g: 2.803067, b: 0.05096486, a: 0}
+    - Vector2_CFCD19EF: {r: 0, g: 0, b: 0, a: 0}
+    - _BaseColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Color: {r: 0.01886791, g: 0.01886791, b: 0.01886791, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+    - _FresnelColor: {r: 1, g: 1, b: 1, a: 1}
+    - _HighColor: {r: 1, g: 1, b: 1, a: 1}
+    - _LowColor: {r: 1, g: 1, b: 1, a: 1}
+    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _RimColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}

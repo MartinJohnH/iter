@@ -10,10 +10,10 @@ using UnityEngine.Events;
 public class Companion : MonoBehaviour
 {
     public Player player;
-    public Transform tetherAnchor;
     public Material dissolveMaterial;
     public bool isTethered = true;
     public float tetherRadius = 5.0f;
+    public TetherController tether;
     public float dissolveTimeLimit = 10.0f;
     public UnityEvent onDeath;
     public UnityEvent onDeathTick;
@@ -43,22 +43,14 @@ public class Companion : MonoBehaviour
         _navMeshAgent.ResetPath();
 
         _lineRenderer.positionCount = 2;
-        RenderTether();
+        tether.enabled = true;
         
         for (int i = 0; i < _meshRenderers.Length; i++)
         {
             _defaultMaterials[i] = _meshRenderers[i].material;
         }
     }
-
-    private void RenderTether()
-    {
-        _lineRenderer.positionCount = 2;
-        _lineRenderer.useWorldSpace = true;
-        _lineRenderer.SetPosition(0, tetherAnchor.position);
-        _lineRenderer.SetPosition(1, player.tetherAnchor.position);
-    }
-
+    
     void Update()
     {
         
@@ -72,11 +64,11 @@ public class Companion : MonoBehaviour
 
         if (_navMeshAgent.enabled)
         {
-            _lineRenderer.enabled = true;
+            
             
             if (isTethered)
             {
-                RenderTether();
+                _lineRenderer.enabled = false;
                 FollowPlayer();
                 if (!IsCloseEnoughToTether())
                 {
@@ -85,6 +77,7 @@ public class Companion : MonoBehaviour
             }
             else
             {
+                _lineRenderer.enabled = true;
                 _navMeshAgent.ResetPath();
                 RenderTetheringRadius();
             }
@@ -178,6 +171,7 @@ public class Companion : MonoBehaviour
         if (!isTethered && IsCloseEnoughToTether())
         {
             isTethered = true;
+            tether.enabled = true;
             if (_isDying)
             {
                 CancelDissolve();
@@ -186,6 +180,7 @@ public class Companion : MonoBehaviour
         else
         {
             isTethered = false;
+            tether.enabled = false;
             if (!_isDying)
             {
                 _dissolveCoroutine = StartDissolve();

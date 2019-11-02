@@ -8,7 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: TetherMaterial
-  m_Shader: {fileID: 4800000, guid: 942da842f82e54bc190e60c1b9d3a585, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: e0f8143b72f704779a07033dc0d0e969,
+    type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 1
@@ -49,7 +50,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_47ABB1D2: 0.5
     - Vector1_781627CD: 1
+    - Vector1_D725C1CF: 0.1
     - _AlphaClip: 0
     - _Blend: 0
     - _BlendOp: 0
@@ -80,6 +83,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
+    - Color_1BF51148: {r: 682.6667, g: 766.9961, b: 0, a: 0}
     - Color_ECACD17E: {r: 2.273454, g: 2.297397, b: 0.010836803, a: 1}
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 0}

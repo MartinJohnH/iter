@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 2580a6901fb8f40af90134bc4f089f9a
+guid: a3b090258ea3b4d4f8e3ed4f264b0b14
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: CubeOutlineMaterial
-    second: {fileID: 2100000, guid: ad301413fe54a4efb8338d48bb9b76c5, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0

@@ -1,0 +1,16 @@
+{
+"companyName": "DefaultCompany",
+"productName": "Iter",
+"productVersion": "0.1",
+"dataUrl": "Iter.data.unityweb",
+"wasmCodeUrl": "Iter.wasm.code.unityweb",
+"wasmFrameworkUrl": "Iter.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.2.8f1"
+}

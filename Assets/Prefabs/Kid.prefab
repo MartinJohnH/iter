@@ -2366,7 +2366,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7857159444602206484}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.711, z: 0.02}
+  m_LocalPosition: {x: 0, y: 0.711, z: 0.101}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4726287337451090915}
@@ -2696,7 +2696,7 @@ GameObject:
   - component: {fileID: 5303466721915883288}
   - component: {fileID: 1579079300360158522}
   m_Layer: 0
-  m_Name: Iter_Kid_RIGGED
+  m_Name: Kid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2732,8 +2732,8 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: e18be487410394c55a1bc368fdf634ed, type: 3}
   m_Controller: {fileID: 9100000, guid: 78303c68c57094e379ff2f0e8cf3a01f, type: 2}
   m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_UpdateMode: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -2854,7 +2854,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 1.28
-  m_BaseOffset: -0.1
+  m_BaseOffset: 0
   m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
 --- !u!114 &1024993979467426222
@@ -2931,7 +2931,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 3
 --- !u!114 &5303466721915883288
 MonoBehaviour:

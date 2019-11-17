@@ -35,13 +35,15 @@ public class TetherController : MonoBehaviour
             }
             else
             {
-                transform.position = Vector3.MoveTowards(transform.position, playerAnchor.position,
-                    Time.deltaTime * followSpeed);
+//                transform.position = Vector3.MoveTowards(transform.position, playerAnchor.position,
+//                    Time.deltaTime * followSpeed);
+                transform.position = playerAnchor.position;
+                _movingTo = true;
                 
-                if (Vector3.Distance(transform.position, playerAnchor.position) < 0.001f)
-                {
-                    _movingTo = true;
-                }
+//                if (Vector3.Distance(transform.position, playerAnchor.position) < 0.001f)
+//                {
+//                    _movingTo = true;
+//                }
             }
         }
     }

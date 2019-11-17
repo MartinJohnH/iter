@@ -5807,6 +5807,11 @@ PrefabInstance:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5246798992907771074, guid: cea42362e4d11414e8bd23e3187eaaa3,
+        type: 3}
+      propertyPath: m_WorldUpOverride
+      value: 
+      objectReference: {fileID: 700488919}
     - target: {fileID: 5246798993157100980, guid: cea42362e4d11414e8bd23e3187eaaa3,
         type: 3}
       propertyPath: m_Follow

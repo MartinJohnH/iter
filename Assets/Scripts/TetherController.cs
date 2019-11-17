@@ -8,14 +8,14 @@ public class TetherController : MonoBehaviour
     public Transform companionAnchor;
     public float followSpeed = 100.0f;
 
-    private ParticleSystem _particleSystem;
+    private TrailRenderer _trailRenderer;
 
     private bool _movingTo = true;
     // Start is called before the first frame update
     void Start()
     {
-        _particleSystem = GetComponent<ParticleSystem>();
-        _particleSystem.transform.position = playerAnchor.position;
+        _trailRenderer = GetComponent<TrailRenderer>();
+        _trailRenderer.transform.position = playerAnchor.position;
     }
 
     // Update is called once per frame
@@ -35,13 +35,15 @@ public class TetherController : MonoBehaviour
             }
             else
             {
-                transform.position = Vector3.MoveTowards(transform.position, playerAnchor.position,
-                    Time.deltaTime * followSpeed);
+//                transform.position = Vector3.MoveTowards(transform.position, playerAnchor.position,
+//                    Time.deltaTime * followSpeed);
+                transform.position = playerAnchor.position;
+                _movingTo = true;
                 
-                if (Vector3.Distance(transform.position, playerAnchor.position) < 0.001f)
-                {
-                    _movingTo = true;
-                }
+//                if (Vector3.Distance(transform.position, playerAnchor.position) < 0.001f)
+//                {
+//                    _movingTo = true;
+//                }
             }
         }
     }

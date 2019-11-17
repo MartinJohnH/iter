@@ -17,6 +17,7 @@ public class GravityListener : MonoBehaviour
     private Rigidbody _rigidbody;
     private Vector3 _gravity = Physics.gravity;
     private Animator _animator;
+    private NavMeshAgent _agent;
     private static readonly int IsFalling = Animator.StringToHash("isFalling");
 
     void Start()
@@ -25,6 +26,7 @@ public class GravityListener : MonoBehaviour
         _animator = GetComponent<Animator>();
         _gravityController = FindObjectOfType<GravityController>();
         _gravityController.register(this);
+        _agent = GetComponent<NavMeshAgent>();
     }
 
     private void OnDestroy()
@@ -55,10 +57,9 @@ public class GravityListener : MonoBehaviour
         _rigidbody.isKinematic = false;
         _rigidbody.freezeRotation = true;
         
-        NavMeshAgent agent = GetComponent<NavMeshAgent>();
-        if (agent)
+        if (_agent)
         {
-            agent.enabled = false;
+            _agent.enabled = false;
         }
         
         Quaternion rotation = Quaternion.LookRotation(newForward, newUp);
@@ -92,10 +93,10 @@ public class GravityListener : MonoBehaviour
 
         _rigidbody.freezeRotation = false;
         
-        if (agent)
+        if (_agent)
         {
             _rigidbody.isKinematic = true;
-            agent.enabled = true;
+            _agent.enabled = true;
         }
         
     }

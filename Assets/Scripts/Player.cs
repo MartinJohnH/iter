@@ -35,6 +35,9 @@ public class Player : MonoBehaviour
         float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
             
         bool isMovePressed = Math.Abs(translation) > 0.01f || Math.Abs(rotation) > 0.01f;
+        bool isRunPressed = Input.GetButton("Fire3");
+
+        translation = isRunPressed ? Input.GetAxis("Vertical") * (2 * runSpeed) : translation;
 
         if (_navMeshAgent.enabled)
         {

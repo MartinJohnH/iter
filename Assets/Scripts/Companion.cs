@@ -30,6 +30,7 @@ public class Companion : MonoBehaviour
     private LineRenderer _lineRenderer;
     private static readonly int Speed = Animator.StringToHash("speed");
     private static readonly int Progress = Shader.PropertyToID("Vector1_47ABB1D2");
+    private static readonly int IsTethered = Animator.StringToHash("isTethered");
 
     void Start()
     {
@@ -189,6 +190,7 @@ public class Companion : MonoBehaviour
                 StartCoroutine(_tickCoroutine);
             }
         }
+        _animator.SetBool(IsTethered, isTethered);
     }
 
     private bool IsCloseEnoughToTether()

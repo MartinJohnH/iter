@@ -16,10 +16,12 @@ public class GravityController : MonoBehaviour
     
     private HashSet<GravityListener> gravityListeners = new HashSet<GravityListener>();
     private Direction _lastDirection = Direction.Down;
+    private AudioSource _audioSource;
 
     private void Start()
     {
         _lastDirection = direction;
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
@@ -57,6 +59,8 @@ public class GravityController : MonoBehaviour
             {
                 listener.OnGravityChange(g);
             }
+            
+            _audioSource.Play();
         }
     }
 

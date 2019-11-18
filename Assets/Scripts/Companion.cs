@@ -189,6 +189,7 @@ public class Companion : MonoBehaviour
             {
                 _dissolveCoroutine = StartDissolve();
                 _tickCoroutine = MakeTick();
+                clockSound.Play();
                 StartCoroutine(_dissolveCoroutine);
                 StartCoroutine(_tickCoroutine);
             }
@@ -230,7 +231,6 @@ public class Companion : MonoBehaviour
 
     public void OnStep()
     {
-        Debug.Log("step");
         stepSound.Play();
     }
 }

@@ -18,6 +18,8 @@ public class Companion : MonoBehaviour
     public UnityEvent onDeath;
     public UnityEvent onDeathTick;
     public UnityEvent onDeathCanceled;
+    public AudioSource clockSound;
+    public AudioSource stepSound;
 
     private IEnumerator _dissolveCoroutine;
     private IEnumerator _tickCoroutine;
@@ -132,6 +134,7 @@ public class Companion : MonoBehaviour
     {
         StopCoroutine(_dissolveCoroutine);
         StopCoroutine(_tickCoroutine);
+        clockSound.Stop();
         
         _isDying = false;
         
@@ -223,5 +226,11 @@ public class Companion : MonoBehaviour
             ToggleTether();
             _framesBeforeLightTouch = 0;
         }
+    }
+
+    public void OnStep()
+    {
+        Debug.Log("step");
+        stepSound.Play();
     }
 }

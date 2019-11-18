@@ -17,6 +17,10 @@ public class Player : MonoBehaviour
     public Transform tetherAnchor;
     public float runSpeed = 8.0f;
     public float rotationSpeed = 1.0f;
+    public AudioSource stepOne;
+    public AudioSource stepTwo;
+    public AudioSource bark;
+    
     private static readonly int Speed = Animator.StringToHash("speed");
     private bool _isHeldBack = false;
 
@@ -113,5 +117,15 @@ public class Player : MonoBehaviour
         _navMeshAgent.velocity = resultantVelocity;
         _navMeshAgent.updateRotation = translation > 0.0f || Math.Abs(rotation) > 0.0f;
         _navMeshAgent.SetDestination(destination);
+    }
+
+    public void OnStepOne()
+    {
+        stepOne.Play();
+    }
+
+    public void OnStepTwo()
+    {
+        stepTwo.Play();
     }
 }

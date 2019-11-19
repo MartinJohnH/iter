@@ -6,6 +6,19 @@ using UnityEngine.Events;
 
 public class GravityController : MonoBehaviour
 {
+    private static GravityController instance;
+
+    public static GravityController GetInstance()
+    {
+        if (instance)
+        {
+            return instance;
+        }
+
+        instance = FindObjectOfType<GravityController>();
+        return instance;
+    }
+    
     public enum Direction
     {
         Forward, Back, Left, Right, Up, Down

@@ -6,6 +6,19 @@ using UnityEngine.Audio;
 
 public class MusicController : MonoBehaviour
 {
+    private static MusicController instance;
+
+    public static MusicController GetInstance()
+    {
+        if (instance)
+        {
+            return instance;
+        }
+
+        instance = FindObjectOfType<MusicController>();
+        return instance;
+    }
+    
     public enum Variation
     {
         A_NoLowpass, A_Lowpass, B_NoLowpass, B_Lowpass, C_NoLowpass, C_Lowpass, D_NoLowpass, D_Lowpass

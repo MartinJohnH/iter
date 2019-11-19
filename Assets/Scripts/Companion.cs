@@ -190,6 +190,7 @@ public class Companion : MonoBehaviour
                 _dissolveCoroutine = StartDissolve();
                 _tickCoroutine = MakeTick();
                 clockSound.Play();
+                MusicController.GetInstance().TransitionTo(MusicController.Variation.C_Lowpass);
                 StartCoroutine(_dissolveCoroutine);
                 StartCoroutine(_tickCoroutine);
             }

@@ -14064,7 +14064,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1177841985}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 10.88, y: -17.3, z: 83.07001}
+  m_LocalPosition: {x: 10.88, y: 7.55, z: 83.07001}
   m_LocalScale: {x: 314.7585, y: 3476.28, z: 908.3214}
   m_Children: []
   m_Father: {fileID: 1134401308}
@@ -14271,6 +14271,7 @@ GameObject:
   - component: {fileID: 1192838852}
   - component: {fileID: 1192838854}
   - component: {fileID: 1192838853}
+  - component: {fileID: 1192838855}
   m_Layer: 0
   m_Name: Cube (9)
   m_TagString: Untagged
@@ -14339,6 +14340,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1192838851}
   m_Mesh: {fileID: -5495902117074765545, guid: f2ae3805237d648c2938b48dc3a9ceb5, type: 3}
+--- !u!65 &1192838855
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192838851}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.012644063, y: 0.01264406, z: 0.012644057}
+  m_Center: {x: 0.0000000069849193, y: -0.0000000081490725, z: 2.3283064e-10}
 --- !u!1 &1195204913
 GameObject:
   m_ObjectHideFlags: 0
@@ -20722,6 +20736,7 @@ GameObject:
   - component: {fileID: 1685631789}
   - component: {fileID: 1685631791}
   - component: {fileID: 1685631790}
+  - component: {fileID: 1685631792}
   m_Layer: 0
   m_Name: Cube (9)
   m_TagString: Untagged
@@ -20790,6 +20805,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1685631788}
   m_Mesh: {fileID: -5495902117074765545, guid: f2ae3805237d648c2938b48dc3a9ceb5, type: 3}
+--- !u!65 &1685631792
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685631788}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.012644063, y: 0.01264406, z: 0.012644057}
+  m_Center: {x: -4.656614e-10, y: -0.0000000044237822, z: 0}
 --- !u!1001 &1686063147
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24025,7 +24053,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1950028598
 Transform:
   m_ObjectHideFlags: 0

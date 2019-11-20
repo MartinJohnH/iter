@@ -15,13 +15,26 @@ public class TestTrigger : MonoBehaviour
     {
         
     }
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("unlock door");
+        Debug.Log("unlock door!!" + other.gameObject.tag);
         Usable usable = other.gameObject.GetComponent<Usable>();
         if (usable)
         {
             usable.Use();
+        }
+
+        if (other.gameObject.tag == "puzzleArea3")
+        {
+            OpenDoor2.pressurePlateCounter++;
+        }
+    }
+    
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "puzzleArea3")
+        {
+            OpenDoor2.pressurePlateCounter--;
         }
     }
     

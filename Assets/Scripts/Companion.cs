@@ -99,7 +99,7 @@ public class Companion : MonoBehaviour
     private IEnumerator MakeTick()
     {
         float time = dissolveTimeLimit;
-        while (time > 0.0f)
+        while (time >= 0.0f)
         {
             onDeathTick?.Invoke();
             time -= 1.0f;
@@ -127,6 +127,8 @@ public class Companion : MonoBehaviour
             yield return new WaitForSeconds(stepTime);
         }
 
+        clockSound.Stop();
+        MusicController.GetInstance().TransitionTo(MusicController.Variation.A_Lowpass);
         onDeath?.Invoke();
     }
 
@@ -145,7 +147,7 @@ public class Companion : MonoBehaviour
         {
             _meshRenderers[i].material = _defaultMaterials[i];
         }
-        
+
         onDeathCanceled?.Invoke();
     }
 

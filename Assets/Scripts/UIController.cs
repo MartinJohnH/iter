@@ -34,7 +34,7 @@ public class UIController : MonoBehaviour
         countdownText.enabled = false;
         gameOverText.enabled = false;
         gameOverPanel.enabled = false;
-        restartButton.enabled = false;
+        restartButton.gameObject.SetActive(false);
     }
 
     public void ResetCountdown()
@@ -64,7 +64,7 @@ public class UIController : MonoBehaviour
 
     public void ShowGameOver()
     {
-        
+        StartCoroutine(GameOverAnimation());
     }
 
     private IEnumerator GameOverAnimation()
@@ -74,22 +74,16 @@ public class UIController : MonoBehaviour
         gameOverText.enabled = true;
         gameOverPanel.enabled = true;
         
-        while (progress < 1.0)
+        while (progress <= 1.0)
         {
             gameOverPanel.color = Color.Lerp(Color.clear, Color.black, progress);
             gameOverText.color = Color.Lerp(Color.clear, Color.white, progress);
-            progress += 0.1f;
-            yield return new WaitForSeconds(0.1f);
+            progress += 0.01f;
+            yield return new WaitForEndOfFrame();
         }
 
-        progress = 0f;
-
-        while (progress < 1.0)
-        {
-            progress += 0.1f;
-            yield return new WaitForSeconds(0.1f);
-        }
         
-        restartButton.enabled = true;
+
+        restartButton.gameObject.SetActive(true);
     }
 }

@@ -66,6 +66,7 @@ public class Player : MonoBehaviour
         {
             AttemptToUse(other);
         }
+        
     }
 
     private void AttemptToUse(Collider other)

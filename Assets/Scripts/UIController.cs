@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Button = UnityEngine.UI.Button;
+using Image = UnityEngine.UI.Image;
 
 public class UIController : MonoBehaviour
 {
@@ -19,12 +23,18 @@ public class UIController : MonoBehaviour
     
     public int countdownSeconds = 30;
     public Text countdownText;
+    public Text gameOverText;
+    public Image gameOverPanel;
+    public Button restartButton;
     
     private int _currentTicks;
 
     private void Start()
     {
         countdownText.enabled = false;
+        gameOverText.enabled = false;
+        gameOverPanel.enabled = false;
+        restartButton.gameObject.SetActive(false);
     }
 
     public void ResetCountdown()
@@ -52,8 +62,28 @@ public class UIController : MonoBehaviour
         }
     }
 
-    private void ShowGameOver()
+    public void ShowGameOver()
     {
+        StartCoroutine(GameOverAnimation());
+    }
+
+    private IEnumerator GameOverAnimation()
+    {
+        float progress = 0;
+
+        gameOverText.enabled = true;
+        gameOverPanel.enabled = true;
         
+        while (progress <= 1.0)
+        {
+            gameOverPanel.color = Color.Lerp(Color.clear, Color.black, progress);
+            gameOverText.color = Color.Lerp(Color.clear, Color.white, progress);
+            progress += 0.01f;
+            yield return new WaitForEndOfFrame();
+        }
+
+        
+
+        restartButton.gameObject.SetActive(true);
     }
 }

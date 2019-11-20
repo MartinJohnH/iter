@@ -99,4 +99,44 @@ public class MusicController : MonoBehaviour
             _currentVariation = variation;
         }
     }
+
+    public void ToggleLowpass(bool isEnabled)
+    {
+        if (isEnabled)
+        {
+            switch (variation)
+            {
+                case Variation.A_NoLowpass:
+                    _aLowpass.TransitionTo(transitionTime);
+                    break;
+                case Variation.B_NoLowpass:
+                    _bLowpass.TransitionTo(transitionTime);
+                    break;
+                case Variation.C_NoLowpass:
+                    _cLowpass.TransitionTo(transitionTime);
+                    break;
+                case Variation.D_NoLowpass:
+                    _dLowpass.TransitionTo(transitionTime);
+                    break;
+            }
+        }
+        else
+        {
+            switch (variation)
+            {
+                case Variation.A_Lowpass:
+                    _aNoLowpass.TransitionTo(transitionTime);
+                    break;
+                case Variation.B_Lowpass:
+                    _bNoLowpass.TransitionTo(transitionTime);
+                    break;
+                case Variation.C_Lowpass:
+                    _cNoLowpass.TransitionTo(transitionTime);
+                    break;
+                case Variation.D_Lowpass:
+                    _dNoLowpass.TransitionTo(transitionTime);
+                    break;
+            }
+        }
+    }
 }

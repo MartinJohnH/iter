@@ -24,6 +24,10 @@ public class OpenDoor2 : MonoBehaviour
             print(pressurePlateCounter);
             transform.position += new Vector3(0, openingSpeed  * Time.deltaTime, 0);
         }
+        else if(pressurePlateCounter != 3 && transform.position.y >= 17.23)
+        {
+            transform.position -= new Vector3(0, openingSpeed  * Time.deltaTime, 0);
+        }
     }
     
     public void UnlockDoor()

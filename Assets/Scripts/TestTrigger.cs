@@ -19,7 +19,6 @@ public class TestTrigger : MonoBehaviour
     {
         if (other.gameObject.layer == Layers.Player || other.gameObject.layer == Layers.Usable )
         {
-            Debug.Log("unlock door!!" + other.gameObject.tag);
             Usable usable = GetComponent<Usable>();
             if (usable)
             {
@@ -36,6 +35,11 @@ public class TestTrigger : MonoBehaviour
     {
         if (other.gameObject.layer == Layers.Player || other.gameObject.layer == Layers.Usable)
         {
+            Usable usable = GetComponent<Usable>();
+            if (usable)
+            {
+                usable.Use();
+            }
             if (CompareTag("puzzleArea3"))
             {
                 OpenDoor2.pressurePlateCounter--;

@@ -19,11 +19,14 @@ public class WindowBlocker : MonoBehaviour
         {
             transform.position -= new Vector3(0, openingSpeed  * Time.deltaTime, 0);
 
+        }else if (isWindowOpended && transform.position.y <= 80)
+        {
+            transform.position += new Vector3(0, openingSpeed  * Time.deltaTime, 0);
         }
     }
     public void CloseWindow()
     {
         print("test");
-        isWindowOpended = false; 
+        isWindowOpended = !isWindowOpended; 
     }
 }

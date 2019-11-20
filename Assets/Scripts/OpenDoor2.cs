@@ -19,15 +19,15 @@ public class OpenDoor2 : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        print(pressurePlateCounter);
-        if (pressurePlateCounter >= 3 &&  transform.position.y <= threshold)
+        if (pressurePlateCounter == 3 &&  transform.position.y <= threshold)
         {
+            print(pressurePlateCounter);
             transform.position += new Vector3(0, openingSpeed  * Time.deltaTime, 0);
         }
     }
     
     public void UnlockDoor()
     {
-        isDoorLocked = false;
+        //pressurePlateCounter++;
     }
 }

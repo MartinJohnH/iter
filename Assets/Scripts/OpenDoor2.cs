@@ -29,9 +29,4 @@ public class OpenDoor2 : MonoBehaviour
             transform.position -= new Vector3(0, openingSpeed  * Time.deltaTime, 0);
         }
     }
-    
-    public void UnlockDoor()
-    {
-        //pressurePlateCounter++;
-    }
 }

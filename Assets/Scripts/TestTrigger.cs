@@ -17,24 +17,29 @@ public class TestTrigger : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("unlock door!!" + other.gameObject.tag);
-        Usable usable = other.gameObject.GetComponent<Usable>();
-        if (usable)
+        if (other.gameObject.layer == Layers.Player || other.gameObject.layer == Layers.Usable )
         {
-            usable.Use();
-        }
-
-        if (other.gameObject.tag == "puzzleArea3")
-        {
-            OpenDoor2.pressurePlateCounter++;
+            Debug.Log("unlock door!!" + other.gameObject.tag);
+            Usable usable = other.gameObject.GetComponent<Usable>();
+            if (usable)
+            {
+                usable.Use();
+            }
+            if (other.gameObject.tag == "puzzleArea3")
+            {
+                OpenDoor2.pressurePlateCounter++;
+            }
         }
     }
     
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "puzzleArea3")
+        if (other.gameObject.layer == Layers.Player || other.gameObject.layer == Layers.Usable)
         {
-            OpenDoor2.pressurePlateCounter--;
+            if (other.gameObject.tag == "puzzleArea3")
+            {
+                OpenDoor2.pressurePlateCounter--;
+            }
         }
     }
     

@@ -20,12 +20,12 @@ public class TestTrigger : MonoBehaviour
         if (other.gameObject.layer == Layers.Player || other.gameObject.layer == Layers.Usable )
         {
             Debug.Log("unlock door!!" + other.gameObject.tag);
-            Usable usable = other.gameObject.GetComponent<Usable>();
+            Usable usable = GetComponent<Usable>();
             if (usable)
             {
                 usable.Use();
             }
-            if (other.gameObject.tag == "puzzleArea3")
+            if (CompareTag("puzzleArea3"))
             {
                 OpenDoor2.pressurePlateCounter++;
             }
@@ -36,7 +36,7 @@ public class TestTrigger : MonoBehaviour
     {
         if (other.gameObject.layer == Layers.Player || other.gameObject.layer == Layers.Usable)
         {
-            if (other.gameObject.tag == "puzzleArea3")
+            if (CompareTag("puzzleArea3"))
             {
                 OpenDoor2.pressurePlateCounter--;
             }

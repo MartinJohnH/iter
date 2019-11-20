@@ -9,20 +9,21 @@ public class WindowBlocker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        isWindowOpended = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!isWindowOpended &&  transform.position.y >= 35)
+        if (!isWindowOpended && transform.position.y >= 35)
         {
             transform.position -= new Vector3(0, openingSpeed  * Time.deltaTime, 0);
 
         }
     }
-    public void closeWindow()
+    public void CloseWindow()
     {
+        print("test");
         isWindowOpended = false; 
     }
 }

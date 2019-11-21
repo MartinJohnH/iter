@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 804563289879801411}
-  m_Layer: 0
+  - component: {fileID: 472327645141671615}
+  m_Layer: 14
   m_Name: Column 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,6 +36,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &472327645141671615
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869056806638281458}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.1, y: 9.515, z: 1.71}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 7.2, y: 0, z: -7.92}
+  m_TimeToStationary: 0.5
 --- !u!1001 &3673646159834479371
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42,11 +59,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804563289879801411}
     m_Modifications:
-    - target: {fileID: 1056678870488474150, guid: 8b462c9a6b5674b6dbfe1d11edf72e5d,
-        type: 3}
-      propertyPath: m_Name
-      value: Cube (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 5016579316072080235, guid: 8b462c9a6b5674b6dbfe1d11edf72e5d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -117,6 +129,26 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 99.49955
       objectReference: {fileID: 0}
+    - target: {fileID: 1056678870488474150, guid: 8b462c9a6b5674b6dbfe1d11edf72e5d,
+        type: 3}
+      propertyPath: m_Name
+      value: Cube (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056678870488474150, guid: 8b462c9a6b5674b6dbfe1d11edf72e5d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056678870488474150, guid: 8b462c9a6b5674b6dbfe1d11edf72e5d,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056678870488474150, guid: 8b462c9a6b5674b6dbfe1d11edf72e5d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b462c9a6b5674b6dbfe1d11edf72e5d, type: 3}
 --- !u!4 &8603302423926478944 stripped
@@ -132,11 +164,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804563289879801411}
     m_Modifications:
-    - target: {fileID: 1056678870488474150, guid: 8b462c9a6b5674b6dbfe1d11edf72e5d,
-        type: 3}
-      propertyPath: m_Name
-      value: Cube (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 5016579316072080235, guid: 8b462c9a6b5674b6dbfe1d11edf72e5d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -207,6 +234,26 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 255.56299
       objectReference: {fileID: 0}
+    - target: {fileID: 1056678870488474150, guid: 8b462c9a6b5674b6dbfe1d11edf72e5d,
+        type: 3}
+      propertyPath: m_Name
+      value: Cube (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056678870488474150, guid: 8b462c9a6b5674b6dbfe1d11edf72e5d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056678870488474150, guid: 8b462c9a6b5674b6dbfe1d11edf72e5d,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056678870488474150, guid: 8b462c9a6b5674b6dbfe1d11edf72e5d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b462c9a6b5674b6dbfe1d11edf72e5d, type: 3}
 --- !u!4 &9103343780061305270 stripped
@@ -222,11 +269,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804563289879801411}
     m_Modifications:
-    - target: {fileID: 1056678870488474150, guid: 8b462c9a6b5674b6dbfe1d11edf72e5d,
-        type: 3}
-      propertyPath: m_Name
-      value: Cube (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 5016579316072080235, guid: 8b462c9a6b5674b6dbfe1d11edf72e5d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -297,6 +339,26 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 181.35121
       objectReference: {fileID: 0}
+    - target: {fileID: 1056678870488474150, guid: 8b462c9a6b5674b6dbfe1d11edf72e5d,
+        type: 3}
+      propertyPath: m_Name
+      value: Cube (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056678870488474150, guid: 8b462c9a6b5674b6dbfe1d11edf72e5d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056678870488474150, guid: 8b462c9a6b5674b6dbfe1d11edf72e5d,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056678870488474150, guid: 8b462c9a6b5674b6dbfe1d11edf72e5d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b462c9a6b5674b6dbfe1d11edf72e5d, type: 3}
 --- !u!4 &8356768996798931 stripped
@@ -312,11 +374,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804563289879801411}
     m_Modifications:
-    - target: {fileID: 1056678870488474150, guid: 8b462c9a6b5674b6dbfe1d11edf72e5d,
-        type: 3}
-      propertyPath: m_Name
-      value: Cube
-      objectReference: {fileID: 0}
     - target: {fileID: 5016579316072080235, guid: 8b462c9a6b5674b6dbfe1d11edf72e5d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -387,6 +444,26 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 255.56299
       objectReference: {fileID: 0}
+    - target: {fileID: 1056678870488474150, guid: 8b462c9a6b5674b6dbfe1d11edf72e5d,
+        type: 3}
+      propertyPath: m_Name
+      value: Cube
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056678870488474150, guid: 8b462c9a6b5674b6dbfe1d11edf72e5d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056678870488474150, guid: 8b462c9a6b5674b6dbfe1d11edf72e5d,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056678870488474150, guid: 8b462c9a6b5674b6dbfe1d11edf72e5d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b462c9a6b5674b6dbfe1d11edf72e5d, type: 3}
 --- !u!4 &2336304827067401423 stripped
@@ -402,11 +479,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804563289879801411}
     m_Modifications:
-    - target: {fileID: 1056678870488474150, guid: 8b462c9a6b5674b6dbfe1d11edf72e5d,
-        type: 3}
-      propertyPath: m_Name
-      value: Cube (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 5016579316072080235, guid: 8b462c9a6b5674b6dbfe1d11edf72e5d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -476,6 +548,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 181.35121
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056678870488474150, guid: 8b462c9a6b5674b6dbfe1d11edf72e5d,
+        type: 3}
+      propertyPath: m_Name
+      value: Cube (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056678870488474150, guid: 8b462c9a6b5674b6dbfe1d11edf72e5d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056678870488474150, guid: 8b462c9a6b5674b6dbfe1d11edf72e5d,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056678870488474150, guid: 8b462c9a6b5674b6dbfe1d11edf72e5d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b462c9a6b5674b6dbfe1d11edf72e5d, type: 3}

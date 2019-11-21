@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
-using Button = UnityEngine.UI.Button;
-using Image = UnityEngine.UI.Image;
+
 
 public class UIController : MonoBehaviour
 {
@@ -26,15 +23,47 @@ public class UIController : MonoBehaviour
     public Text gameOverText;
     public Image gameOverPanel;
     public Button restartButton;
+    public Text hintsText;
     
     private int _currentTicks;
+    private bool _shouldShowTetherHint = true;
 
     private void Start()
     {
         countdownText.enabled = false;
         gameOverText.enabled = false;
         gameOverPanel.enabled = false;
+        hintsText.enabled = false;
         restartButton.gameObject.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (Input.GetButton("Fire2"))
+        {
+            _shouldShowTetherHint = false;
+            ToggleTetherHint(false);
+        }
+    }
+
+    public void ShowTetherHint()
+    {
+        if (_shouldShowTetherHint)
+        {
+            ToggleTetherHint(true);
+            _shouldShowTetherHint = false;
+        }
+    } 
+
+    public void ToggleTetherHint(bool isEnabled)
+    {
+        hintsText.enabled = isEnabled;
+        hintsText.text = isEnabled ? "Right-click the mouse 🖱️ to toggle the tether." : "";
+    }
+
+    public bool ShouldShowTetherHint()
+    {
+        return _shouldShowTetherHint;
     }
 
     public void ResetCountdown()
@@ -46,6 +75,7 @@ public class UIController : MonoBehaviour
     
     public void CountdownTick()
     {
+        
         if (_currentTicks == countdownSeconds)
         {
             ResetCountdown();

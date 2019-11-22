@@ -19,6 +19,7 @@ public class UIController : MonoBehaviour
     }
     
     public int countdownSeconds = 30;
+    public int hintTimeSeconds = 5;
     public Text countdownText;
     public Text gameOverText;
     public Image gameOverPanel;
@@ -52,6 +53,7 @@ public class UIController : MonoBehaviour
         {
             ToggleTetherHint(true);
             _shouldShowTetherHint = false;
+            StartCoroutine(HintTextTimer());
         }
     } 
 
@@ -64,6 +66,12 @@ public class UIController : MonoBehaviour
     public bool ShouldShowTetherHint()
     {
         return _shouldShowTetherHint;
+    }
+
+    private IEnumerator HintTextTimer()
+    {
+        yield return new WaitForSeconds(hintTimeSeconds);
+        hintsText.enabled = false;
     }
 
     public void ResetCountdown()

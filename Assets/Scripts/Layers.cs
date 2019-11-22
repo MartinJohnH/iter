@@ -10,4 +10,5 @@ public class Layers
     public static readonly int Usable = 12;
     public static readonly int Light = 13;
     public static readonly int NonWalkable = 14;
+    public static readonly int Blockage = 15;
 }

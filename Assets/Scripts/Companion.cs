@@ -237,4 +237,15 @@ public class Companion : MonoBehaviour
     {
         stepSound.Play();
     }
+
+    private void OnCollisionStay(Collision other)
+    {
+        if (other.gameObject.layer == Layers.Blockage)
+        {
+            if (!_navMeshAgent.isStopped)
+            {
+                _navMeshAgent.isStopped = true;
+            }
+        }
+    }
 }

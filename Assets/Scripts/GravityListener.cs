@@ -98,7 +98,7 @@ public class GravityListener : MonoBehaviour
             _rigidbody.isKinematic = true;
             _agent.enabled = true;
         }
-        
+
     }
 
     private bool IsGrounded()

@@ -6787,6 +6787,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: valve
       objectReference: {fileID: 0}
+    - target: {fileID: 7521868787720109720, guid: 133e313499a2b4e7a8ed114a68fefbd3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 1101599548814501262, guid: 133e313499a2b4e7a8ed114a68fefbd3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6795,7 +6800,7 @@ PrefabInstance:
     - target: {fileID: 1101599548814501262, guid: 133e313499a2b4e7a8ed114a68fefbd3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 33.12
+      value: 33.97
       objectReference: {fileID: 0}
     - target: {fileID: 1101599548814501262, guid: 133e313499a2b4e7a8ed114a68fefbd3,
         type: 3}
@@ -6914,8 +6919,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 287.96844, y: 314.6743, z: 197.23071}
-  m_Center: {x: -1.2611622, y: -1.0487671, z: 96.69383}
+  m_Size: {x: 287.96844, y: 314.6743, z: 604.1154}
+  m_Center: {x: -1.2611555, y: -1.048767, z: 300.13626}
 --- !u!1001 &489154299
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19445,6 +19450,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: valve
       objectReference: {fileID: 0}
+    - target: {fileID: 7521868787720109720, guid: 133e313499a2b4e7a8ed114a68fefbd3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 1101599548814501262, guid: 133e313499a2b4e7a8ed114a68fefbd3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19453,7 +19463,7 @@ PrefabInstance:
     - target: {fileID: 1101599548814501262, guid: 133e313499a2b4e7a8ed114a68fefbd3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.13
+      value: -7.31
       objectReference: {fileID: 0}
     - target: {fileID: 1101599548814501262, guid: 133e313499a2b4e7a8ed114a68fefbd3,
         type: 3}
@@ -19572,8 +19582,34 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 287.96838, y: 314.6743, z: 197.23067}
-  m_Center: {x: -1.2609177, y: -1.0497437, z: 96.698204}
+  m_Size: {x: 287.96838, y: 314.6743, z: 518.3238}
+  m_Center: {x: -1.2609165, y: -1.0497372, z: 257.24472}
+--- !u!114 &1367895263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367895260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fff172865e8d45e2ace9890720df9b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1594916570}
+        m_MethodName: ShowValveHint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1371249701
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22366,6 +22402,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: valve (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7521868787720109720, guid: 133e313499a2b4e7a8ed114a68fefbd3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 1101599548814501262, guid: 133e313499a2b4e7a8ed114a68fefbd3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22487,8 +22528,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 287.96838, y: 314.6743, z: 197.23067}
-  m_Center: {x: -1.261406, y: -1.0497437, z: 96.69039}
+  m_Size: {x: 287.96838, y: 314.6743, z: 538.6777}
+  m_Center: {x: -1.2614086, y: -1.0497372, z: 267.41385}
 --- !u!1001 &1594916569
 PrefabInstance:
   m_ObjectHideFlags: 0

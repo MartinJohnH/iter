@@ -110,6 +110,7 @@ public class Player : MonoBehaviour
         {
             _navMeshAgent.CompleteOffMeshLink();
             companion.GetComponent<NavMeshAgent>().Warp(teleportLocation.position);
+            MusicController.GetInstance().variation = MusicController.Variation.C_NoLowpass;
         }
         Vector3 velocityForward = transform.forward * translation;
         Vector3 velocitySideways = transform.right * rotation;

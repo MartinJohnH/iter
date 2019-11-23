@@ -36,6 +36,7 @@ public class OpenDoor2 : MonoBehaviour
             _audioSource.Play();
             window1.enabled = false;
             window2.enabled = false;
+            MusicController.GetInstance().variation = MusicController.Variation.D_NoLowpass;
         }
     }
 

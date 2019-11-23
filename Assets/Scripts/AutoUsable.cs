@@ -12,16 +12,20 @@ public class AutoUsable : MonoBehaviour
     public UnityEvent onStepOff;
     public AudioClip audioClip;
 
+    private MeshRenderer _meshRenderer;
     private BoxCollider _boxCollider;
     private AudioSource _audioSource;
     private bool _hasBeenUsed = false;
     private bool _canBeUsed = true;
+
+    private readonly int shaderColor = Shader.PropertyToID("Color_C427DAE8");
 
     private void Start()
     {
         _boxCollider = GetComponent<BoxCollider>();
         _boxCollider.isTrigger = true;
         _audioSource = GetComponent<AudioSource>();
+        _meshRenderer = GetComponent<MeshRenderer>();
     }
 
     private void OnTriggerStay(Collider other)
@@ -34,6 +38,11 @@ public class AutoUsable : MonoBehaviour
                 _audioSource.PlayOneShot(audioClip);
                 _hasBeenUsed = true;
                 _canBeUsed = false;
+
+                if (_meshRenderer)
+                {
+                    _meshRenderer.material.SetColor(shaderColor, Color.red);
+                }
             }
         }
     }
@@ -46,6 +55,11 @@ public class AutoUsable : MonoBehaviour
             {
                 onStepOff?.Invoke();
                 _canBeUsed = true;
+                
+                if (_meshRenderer)
+                {
+                    _meshRenderer.material.SetColor(shaderColor, Color.yellow);
+                }
             }
         }
     }

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -30,7 +31,9 @@ public class UIController : MonoBehaviour
     private bool _shouldShowTetherHint = true;
     private bool _shouldShowRunHint = true;
     private bool _shouldShowValveHint = true;
-    
+    private bool _shouldShowLightHint = true;
+    private bool _shouldShowJumpHint = true;
+
     private void Start()
     {
         Cursor.visible = false;
@@ -54,6 +57,28 @@ public class UIController : MonoBehaviour
         }
     }
 
+    public void ShowLightHint()
+    {
+        if (_shouldShowLightHint)
+        {
+            hintsText.enabled = true;
+            hintsText.text = "Step out of the light!";
+            _shouldShowLightHint = false;
+            StartCoroutine(HintTextTimer());
+        }
+    }
+
+    public void ShowJumpHint()
+    {
+        if (_shouldShowJumpHint)
+        {
+            hintsText.enabled = true;
+            hintsText.text = "Run towards the block to jump over.";
+            _shouldShowJumpHint = false;
+            StartCoroutine(HintTextTimer());
+        }
+    }
+
     public void ShowTetherHint()
     {
         if (_shouldShowTetherHint)
@@ -70,6 +95,7 @@ public class UIController : MonoBehaviour
         {
             hintsText.enabled = true;
             hintsText.text = "Hold shift to run.";
+            _shouldShowRunHint = false;
             StartCoroutine(HintTextTimer());
         }
     }
@@ -79,15 +105,21 @@ public class UIController : MonoBehaviour
         if (_shouldShowValveHint)
         {
             hintsText.enabled = true;
-            hintsText.text = "Left click valve to change gravity";
+            hintsText.text = "Left-click the mouse to use the valve.";
+            _shouldShowValveHint = false;
             StartCoroutine(HintTextTimer());
         }
+    }
+
+    public void ShowEndingCredits()
+    {
+        StartCoroutine(GameEndAnimation());
     }
 
     public void ToggleTetherHint(bool isEnabled)
     {
         hintsText.enabled = isEnabled;
-        hintsText.text = isEnabled ? "Right-click the mouse 🖱️ to toggle the tether." : "";
+        hintsText.text = isEnabled ? "Right-click the mouse to toggle the tether." : "";
     }
 
     public bool ShouldShowTetherHint()
@@ -132,10 +164,43 @@ public class UIController : MonoBehaviour
         StartCoroutine(GameOverAnimation());
     }
 
+    private IEnumerator GameEndAnimation()
+    {
+        float progress = 0;
+
+        gameOverPanel.color = Color.clear;
+        gameOverText.color = Color.clear;
+        
+        gameOverText.enabled = true;
+        gameOverPanel.enabled = true;
+
+        gameOverText.text = "To Be Continued...";
+        
+        while (progress <= 1.0)
+        {
+            gameOverPanel.color = Color.Lerp(Color.clear, Color.black, progress);
+            gameOverText.color = Color.Lerp(Color.clear, Color.white, progress);
+            progress += 0.01f;
+            yield return new WaitForEndOfFrame();
+        }
+        
+        restartButton.gameObject.SetActive(true);
+        
+        while (!Input.GetButton("Fire1"))
+        {
+            yield return new WaitForEndOfFrame();
+        }
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     private IEnumerator GameOverAnimation()
     {
         float progress = 0;
 
+        gameOverPanel.color = Color.clear;
+        gameOverText.color = Color.clear;
+        
         gameOverText.enabled = true;
         gameOverPanel.enabled = true;
         
@@ -146,9 +211,14 @@ public class UIController : MonoBehaviour
             progress += 0.01f;
             yield return new WaitForEndOfFrame();
         }
-
         
-
         restartButton.gameObject.SetActive(true);
+
+        while (!Input.GetButton("Fire1"))
+        {
+            yield return new WaitForEndOfFrame();
+        }
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

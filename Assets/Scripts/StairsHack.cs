@@ -24,6 +24,7 @@ public class StairsHack : MonoBehaviour
             offMeshLink.enabled = true;
             _audioSource.Play();
             cube.GetComponent<MeshRenderer>().material = successMaterial;
+            UIController.GetInstance().ShowJumpHint();
         }
     }
 

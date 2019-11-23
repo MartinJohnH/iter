@@ -28,6 +28,13 @@ public class AutoUsable : MonoBehaviour
         _meshRenderer = GetComponent<MeshRenderer>();
     }
 
+    public void KillSwitch()
+    {
+        _canBeUsed = false;
+        _hasBeenUsed = true;
+        isOneTime = true;
+    }
+
     private void OnTriggerStay(Collider other)
     {
         if ((!isOneTime || !_hasBeenUsed) && _canBeUsed)

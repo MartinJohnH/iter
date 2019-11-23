@@ -107,16 +107,16 @@ public class MusicController : MonoBehaviour
             switch (variation)
             {
                 case Variation.A_NoLowpass:
-                    _aLowpass.TransitionTo(transitionTime);
+                    variation = Variation.A_Lowpass;
                     break;
                 case Variation.B_NoLowpass:
-                    _bLowpass.TransitionTo(transitionTime);
+                    variation = Variation.B_Lowpass;
                     break;
                 case Variation.C_NoLowpass:
-                    _cLowpass.TransitionTo(transitionTime);
+                    variation = Variation.C_Lowpass;
                     break;
                 case Variation.D_NoLowpass:
-                    _dLowpass.TransitionTo(transitionTime);
+                    variation = Variation.D_Lowpass;
                     break;
             }
         }
@@ -125,16 +125,16 @@ public class MusicController : MonoBehaviour
             switch (variation)
             {
                 case Variation.A_Lowpass:
-                    _aNoLowpass.TransitionTo(transitionTime);
+                    variation = Variation.A_NoLowpass;
                     break;
                 case Variation.B_Lowpass:
-                    _bNoLowpass.TransitionTo(transitionTime);
+                    variation = Variation.B_NoLowpass;
                     break;
                 case Variation.C_Lowpass:
-                    _cNoLowpass.TransitionTo(transitionTime);
+                    variation = Variation.C_NoLowpass;
                     break;
                 case Variation.D_Lowpass:
-                    _dNoLowpass.TransitionTo(transitionTime);
+                    variation = Variation.D_NoLowpass;
                     break;
             }
         }

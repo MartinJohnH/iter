@@ -13,6 +13,7 @@ public class Companion : MonoBehaviour
     public Material dissolveMaterial;
     public bool isTethered = true;
     public float tetherRadius = 5.0f;
+    public float followOffset = 1.0f;
     public TetherController tether;
     public float dissolveTimeLimit = 10.0f;
     public UnityEvent onDeath;
@@ -20,6 +21,7 @@ public class Companion : MonoBehaviour
     public UnityEvent onDeathCanceled;
     public AudioSource clockSound;
     public AudioSource stepSound;
+    public AudioSource childCough;
 
     private IEnumerator _dissolveCoroutine;
     private IEnumerator _tickCoroutine;
@@ -193,6 +195,7 @@ public class Companion : MonoBehaviour
                 _dissolveCoroutine = StartDissolve();
                 _tickCoroutine = MakeTick();
                 clockSound.Play();
+                childCough.Play();
                 MusicController.GetInstance().ToggleLowpass(true);
                 StartCoroutine(_dissolveCoroutine);
                 StartCoroutine(_tickCoroutine);
@@ -210,7 +213,8 @@ public class Companion : MonoBehaviour
     {
         if ((player.transform.position - transform.position).sqrMagnitude > 5.0f)
         {
-            _navMeshAgent.SetDestination(player.transform.position);
+            Vector3 followPosition = player.transform.position + (player.transform.right * followOffset);
+            _navMeshAgent.SetDestination(followPosition);
             _navMeshAgent.updatePosition = true;
         }
         else

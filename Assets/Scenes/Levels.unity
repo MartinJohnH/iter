@@ -2925,7 +2925,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh292796
+  m_Name: pb_Mesh362150
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4817,7 +4817,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh312060
+  m_Name: pb_Mesh363348
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6861,7 +6861,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 303e2f3c0b439f5499748e1023420fd4, type: 2}
+      objectReference: {fileID: 2100000, guid: 6059d4d56ce614e1e95fd4242a7df838, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 133e313499a2b4e7a8ed114a68fefbd3, type: 3}
 --- !u!4 &485026005 stripped
@@ -6888,7 +6888,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fae8e6af86f040438daee3b16afa5b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onUsed: []
+  onUsed:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 569186394}
+        m_MethodName: SetGravityDirectionDown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   afterUsed: []
 --- !u!65 &485026008
 BoxCollider:
@@ -8136,6 +8149,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 624fc1131700f4dcb8be5f32b31562fa, type: 3}
+--- !u!114 &569186394 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 119530846723476809, guid: 624fc1131700f4dcb8be5f32b31562fa,
+    type: 3}
+  m_PrefabInstance: {fileID: 569186393}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0f4c2169d3984f65bf544673aa1ce4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &578880559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13623,7 +13648,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh292252
+  m_Name: pb_Mesh361586
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -19494,7 +19519,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 303e2f3c0b439f5499748e1023420fd4, type: 2}
+      objectReference: {fileID: 2100000, guid: 6059d4d56ce614e1e95fd4242a7df838, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 133e313499a2b4e7a8ed114a68fefbd3, type: 3}
 --- !u!4 &1367895259 stripped
@@ -19521,7 +19546,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fae8e6af86f040438daee3b16afa5b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onUsed: []
+  onUsed:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 569186394}
+        m_MethodName: SetGravityDirectionUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   afterUsed: []
 --- !u!65 &1367895262
 BoxCollider:
@@ -22402,7 +22440,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 303e2f3c0b439f5499748e1023420fd4, type: 2}
+      objectReference: {fileID: 2100000, guid: 6059d4d56ce614e1e95fd4242a7df838, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 133e313499a2b4e7a8ed114a68fefbd3, type: 3}
 --- !u!1 &1591006594 stripped
@@ -22423,7 +22461,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fae8e6af86f040438daee3b16afa5b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onUsed: []
+  onUsed:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 569186394}
+        m_MethodName: SetGravityDirectionDown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   afterUsed: []
 --- !u!65 &1591006596
 BoxCollider:

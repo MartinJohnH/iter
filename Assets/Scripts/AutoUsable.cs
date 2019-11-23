@@ -31,6 +31,7 @@ public class AutoUsable : MonoBehaviour
             {
                 onStepOn?.Invoke();
                 _audioSource.PlayOneShot(audioClip);
+                _hasBeenUsed = true;
             }
         }
     }

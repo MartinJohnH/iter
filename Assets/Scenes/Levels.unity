@@ -2413,6 +2413,11 @@ PrefabInstance:
       propertyPath: m_CameraRadius
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 5246798992907771074, guid: cea42362e4d11414e8bd23e3187eaaa3,
+        type: 3}
+      propertyPath: m_WorldUpOverride
+      value: 
+      objectReference: {fileID: 940626618}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cea42362e4d11414e8bd23e3187eaaa3, type: 3}
 --- !u!1 &170076733

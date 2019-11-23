@@ -28,6 +28,7 @@ public class UIController : MonoBehaviour
     
     private int _currentTicks;
     private bool _shouldShowTetherHint = true;
+    private bool _shouldShowRunHint = true;
 
     private void Start()
     {
@@ -55,7 +56,17 @@ public class UIController : MonoBehaviour
             _shouldShowTetherHint = false;
             StartCoroutine(HintTextTimer());
         }
-    } 
+    }
+
+    public void ShowRunHint()
+    {
+        if (_shouldShowRunHint)
+        {
+            hintsText.enabled = true;
+            hintsText.text = "Hold shift to run.";
+            StartCoroutine(HintTextTimer());
+        }
+    }
 
     public void ToggleTetherHint(bool isEnabled)
     {

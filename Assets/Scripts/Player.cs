@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     private NavMeshAgent _navMeshAgent;
     private Animator _animator;
     private Collider _collider;
+    private bool _shouldBark = true;
 
     public Companion companion;
     public Transform tetherAnchor;
@@ -48,10 +49,17 @@ public class Player : MonoBehaviour
             if (isMovePressed)
             {
                 MovePlayer(translation, rotation);
+                
+                if (isRunPressed && _shouldBark)
+                {
+                    bark.Play();
+                    _shouldBark = false;
+                }
             }
             else
             {
                 StopPlayer();
+                _shouldBark = true;
             }
         }
 

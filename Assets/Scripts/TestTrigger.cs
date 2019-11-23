@@ -19,11 +19,11 @@ public class TestTrigger : MonoBehaviour
     {
         if (other.gameObject.layer == Layers.Player || other.gameObject.layer == Layers.Usable )
         {
-            Usable usable = GetComponent<Usable>();
-            if (usable)
-            {
-                usable.Use();
-            }
+//            AutoUsable usable = GetComponent<AutoUsable>();
+//            if (usable)
+//            {
+//                usable.Use();
+//            }
             if (CompareTag("puzzleArea3"))
             {
                 OpenDoor2.pressurePlateCounter++;
@@ -35,11 +35,11 @@ public class TestTrigger : MonoBehaviour
     {
         if (other.gameObject.layer == Layers.Player || other.gameObject.layer == Layers.Usable)
         {
-            Usable usable = GetComponent<Usable>();
-            if (usable)
-            {
-                usable.Use();
-            }
+//            Usable usable = GetComponent<Usable>();
+//            if (usable)
+//            {
+//                usable.Use();
+//            }
             if (CompareTag("puzzleArea3"))
             {
                 OpenDoor2.pressurePlateCounter--;

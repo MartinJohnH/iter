@@ -60,6 +60,11 @@ public class MusicController : MonoBehaviour
         track4.Play();
     }
 
+    public void GoToSecondArea()
+    {
+        variation = Variation.B_NoLowpass;
+    }
+
     public void TransitionTo(Variation variation)
     {
         switch (variation)

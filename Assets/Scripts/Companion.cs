@@ -69,8 +69,6 @@ public class Companion : MonoBehaviour
 
         if (_navMeshAgent.enabled)
         {
-            
-            
             if (isTethered)
             {
                 _lineRenderer.enabled = false;
@@ -246,7 +244,8 @@ public class Companion : MonoBehaviour
     {
         if (other.gameObject.layer == Layers.Blockage)
         {
-            _navMeshAgent.enabled = false;
+            _navMeshAgent.isStopped = true;
+            _navMeshAgent.ResetPath();
         }
     }
 
@@ -254,7 +253,7 @@ public class Companion : MonoBehaviour
     {
         if (other.gameObject.layer == Layers.Blockage)
         {
-            _navMeshAgent.enabled = true;
+//            _navMeshAgent.isStopped = true;
         }
     }
 }

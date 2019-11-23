@@ -7,12 +7,14 @@ using UnityEngine.Events;
 [RequireComponent(typeof(AudioSource))]
 public class AutoUsable : MonoBehaviour
 {
+    public bool isOneTime = false;
     public UnityEvent onStepOn;
     public UnityEvent onStepOff;
     public AudioClip audioClip;
 
     private BoxCollider _boxCollider;
     private AudioSource _audioSource;
+    private bool _hasBeenUsed = false;
 
     private void Start()
     {
@@ -23,18 +25,24 @@ public class AutoUsable : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == Layers.Player || other.gameObject.layer == Layers.Companion)
+        if (!isOneTime || !_hasBeenUsed)
         {
-            onStepOn?.Invoke();
-            _audioSource.PlayOneShot(audioClip);
+            if (other.gameObject.layer == Layers.Player || other.gameObject.layer == Layers.Companion)
+            {
+                onStepOn?.Invoke();
+                _audioSource.PlayOneShot(audioClip);
+            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.layer == Layers.Player || other.gameObject.layer == Layers.Companion)
+        if (!isOneTime || !_hasBeenUsed)
         {
-            onStepOff?.Invoke();
+            if (other.gameObject.layer == Layers.Player || other.gameObject.layer == Layers.Companion)
+            {
+                onStepOff?.Invoke();
+            }
         }
     }
 }

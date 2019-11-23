@@ -29,7 +29,8 @@ public class UIController : MonoBehaviour
     private int _currentTicks;
     private bool _shouldShowTetherHint = true;
     private bool _shouldShowRunHint = true;
-
+    private bool _shouldShowValveHint = true;
+    
     private void Start()
     {
         countdownText.enabled = false;
@@ -64,6 +65,16 @@ public class UIController : MonoBehaviour
         {
             hintsText.enabled = true;
             hintsText.text = "Hold shift to run.";
+            StartCoroutine(HintTextTimer());
+        }
+    }
+    
+    public void ShowValveHint()
+    {
+        if (_shouldShowValveHint)
+        {
+            hintsText.enabled = true;
+            hintsText.text = "Left click valve to change gravity";
             StartCoroutine(HintTextTimer());
         }
     }

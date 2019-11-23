@@ -49,6 +49,8 @@ public class Companion : MonoBehaviour
 
         _lineRenderer.positionCount = 2;
         tether.enabled = true;
+
+        _navMeshAgent.autoTraverseOffMeshLink = true;
         
         for (int i = 0; i < _meshRenderers.Length; i++)
         {
@@ -69,6 +71,11 @@ public class Companion : MonoBehaviour
 
         if (_navMeshAgent.enabled)
         {
+            if (_navMeshAgent.isOnOffMeshLink)
+            {
+                _navMeshAgent.CompleteOffMeshLink();
+            }
+            
             if (isTethered)
             {
                 _lineRenderer.enabled = false;
@@ -209,6 +216,7 @@ public class Companion : MonoBehaviour
 
     private void FollowPlayer()
     {
+        
         if ((player.transform.position - transform.position).sqrMagnitude > 5.0f)
         {
             Vector3 followPosition = player.transform.position + (player.transform.right * followOffset);

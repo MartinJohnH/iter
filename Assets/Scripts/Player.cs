@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     public AudioSource stepOne;
     public AudioSource stepTwo;
     public AudioSource bark;
+    public Transform teleportLocation;
     
     private static readonly int Speed = Animator.StringToHash("speed");
     private bool _isHeldBack = false;
@@ -108,6 +109,7 @@ public class Player : MonoBehaviour
         if (_navMeshAgent.isOnOffMeshLink)
         {
             _navMeshAgent.CompleteOffMeshLink();
+            companion.GetComponent<NavMeshAgent>().Warp(teleportLocation.position);
         }
         Vector3 velocityForward = transform.forward * translation;
         Vector3 velocitySideways = transform.right * rotation;

@@ -15,6 +15,7 @@ public class AutoUsable : MonoBehaviour
     private BoxCollider _boxCollider;
     private AudioSource _audioSource;
     private bool _hasBeenUsed = false;
+    private bool _canBeUsed = true;
 
     private void Start()
     {
@@ -25,13 +26,14 @@ public class AutoUsable : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!isOneTime || !_hasBeenUsed)
+        if ((!isOneTime || !_hasBeenUsed) && _canBeUsed)
         {
             if (other.gameObject.layer == Layers.Player || other.gameObject.layer == Layers.Companion || other.gameObject.layer == Layers.Usable)
             {
                 onStepOn?.Invoke();
                 _audioSource.PlayOneShot(audioClip);
                 _hasBeenUsed = true;
+                _canBeUsed = false;
             }
         }
     }
@@ -43,6 +45,7 @@ public class AutoUsable : MonoBehaviour
             if (other.gameObject.layer == Layers.Player || other.gameObject.layer == Layers.Companion || other.gameObject.layer == Layers.Usable)
             {
                 onStepOff?.Invoke();
+                _canBeUsed = true;
             }
         }
     }

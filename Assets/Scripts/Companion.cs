@@ -71,10 +71,6 @@ public class Companion : MonoBehaviour
 
         if (_navMeshAgent.enabled)
         {
-            if (_navMeshAgent.isOnOffMeshLink)
-            {
-                _navMeshAgent.CompleteOffMeshLink();
-            }
             
             if (isTethered)
             {
@@ -252,8 +248,7 @@ public class Companion : MonoBehaviour
     {
         if (other.gameObject.layer == Layers.Blockage)
         {
-            _navMeshAgent.isStopped = true;
-            _navMeshAgent.ResetPath();
+            ToggleTether();
         }
     }
 

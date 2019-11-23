@@ -2857,22 +2857,22 @@ PrefabInstance:
     - target: {fileID: 5246798992907771079, guid: cea42362e4d11414e8bd23e3187eaaa3,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.10419908
+      value: -0.3223252
       objectReference: {fileID: 0}
     - target: {fileID: 5246798992907771079, guid: cea42362e4d11414e8bd23e3187eaaa3,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.00000001651259
+      value: 0.16900967
       objectReference: {fileID: 0}
     - target: {fileID: 5246798992907771079, guid: cea42362e4d11414e8bd23e3187eaaa3,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000001576089
+      value: 0.058603432
       objectReference: {fileID: 0}
     - target: {fileID: 5246798992907771079, guid: cea42362e4d11414e8bd23e3187eaaa3,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9945565
+      value: 0.929574
       objectReference: {fileID: 0}
     - target: {fileID: 5246798992907771079, guid: cea42362e4d11414e8bd23e3187eaaa3,
         type: 3}
@@ -2887,22 +2887,22 @@ PrefabInstance:
     - target: {fileID: 5246798993157100981, guid: cea42362e4d11414e8bd23e3187eaaa3,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.10419908
+      value: -0.3223252
       objectReference: {fileID: 0}
     - target: {fileID: 5246798993157100981, guid: cea42362e4d11414e8bd23e3187eaaa3,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.00000001651259
+      value: 0.16900967
       objectReference: {fileID: 0}
     - target: {fileID: 5246798993157100981, guid: cea42362e4d11414e8bd23e3187eaaa3,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000001576089
+      value: 0.058603432
       objectReference: {fileID: 0}
     - target: {fileID: 5246798993157100981, guid: cea42362e4d11414e8bd23e3187eaaa3,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9945565
+      value: 0.929574
       objectReference: {fileID: 0}
     - target: {fileID: 5246798993157100981, guid: cea42362e4d11414e8bd23e3187eaaa3,
         type: 3}
@@ -4281,7 +4281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47866b4c35fe948a19c4553e521bcad0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openingSpeed: 5
+  openingSpeed: 15
 --- !u!208 &220599108
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -16272,6 +16272,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1134401308}
   - component: {fileID: 1134401309}
+  - component: {fileID: 1134401310}
   m_Layer: 0
   m_Name: door
   m_TagString: Untagged
@@ -16308,6 +16309,102 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingSpeed: 5
   threshold: 60
+--- !u!82 &1134401310
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134401307}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ac0efa6cb47cb4d08a60066818b31018, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1135733555
 GameObject:
   m_ObjectHideFlags: 0
@@ -20826,7 +20923,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1399384134}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.82, y: -2.75, z: -15.61}
+  m_LocalPosition: {x: 5.82, y: -3.38, z: -15.61}
   m_LocalScale: {x: 0.14943746, y: 0.14943746, z: 0.14943746}
   m_Children:
   - {fileID: 2077849337}
@@ -26170,7 +26267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47866b4c35fe948a19c4553e521bcad0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openingSpeed: 5
+  openingSpeed: 15
 --- !u!208 &1710010147
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -31750,7 +31847,6 @@ GameObject:
   - component: {fileID: 2077849341}
   - component: {fileID: 2077849340}
   - component: {fileID: 2077849339}
-  - component: {fileID: 2077849342}
   - component: {fileID: 2077849343}
   - component: {fileID: 2077849338}
   m_Layer: 12
@@ -31789,10 +31885,32 @@ MonoBehaviour:
   isOneTime: 0
   onStepOn:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1134401309}
+        m_MethodName: IncrementPlateCounter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onStepOff:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1134401309}
+        m_MethodName: DecrementPlateCounter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   audioClip: {fileID: 8300000, guid: 00ef3abf3c0834de194b3f5469623dfc, type: 3}
 --- !u!65 &2077849339
 BoxCollider:
@@ -31853,18 +31971,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2077849336}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &2077849342
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2077849336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59739698537374fd99b5964c0c2ce5f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &2077849343
 AudioSource:
   m_ObjectHideFlags: 0
@@ -33998,7 +34104,6 @@ GameObject:
   - component: {fileID: 4740590912711997027}
   - component: {fileID: 4740590912711997026}
   - component: {fileID: 4740590912711997029}
-  - component: {fileID: 4740590912711997032}
   - component: {fileID: 4740590912711997034}
   - component: {fileID: 4740590912711997033}
   m_Layer: 12
@@ -34008,18 +34113,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &4740590912711997032
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4740590912711997031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59739698537374fd99b5964c0c2ce5f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4740590912711997033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34037,7 +34130,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1710010146}
-        m_MethodName: ToggleWindow
+        m_MethodName: OpenWindow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1134401309}
+        m_MethodName: IncrementPlateCounter
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -34051,7 +34155,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1710010146}
-        m_MethodName: ToggleWindow
+        m_MethodName: CloseWindow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1134401309}
+        m_MethodName: DecrementPlateCounter
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -34244,7 +34359,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4740590913034175103}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.77, y: -2.75, z: -20.61}
+  m_LocalPosition: {x: -15.77, y: -3.38, z: -20.61}
   m_LocalScale: {x: 0.14943746, y: 0.14943746, z: 0.14943746}
   m_Children:
   - {fileID: 4740590914449200003}
@@ -34433,7 +34548,6 @@ GameObject:
   - component: {fileID: 4740590914449200004}
   - component: {fileID: 4740590914449200005}
   - component: {fileID: 4740590914449200002}
-  - component: {fileID: 4740590914449200001}
   - component: {fileID: 4740590914449200007}
   - component: {fileID: 4740590914449200006}
   m_Layer: 0
@@ -34443,18 +34557,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &4740590914449200001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4740590914449200000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59739698537374fd99b5964c0c2ce5f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &4740590914449200002
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34545,7 +34647,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 220599107}
-        m_MethodName: ToggleWindow
+        m_MethodName: OpenWindow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1134401309}
+        m_MethodName: IncrementPlateCounter
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -34559,7 +34672,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 220599107}
-        m_MethodName: ToggleWindow
+        m_MethodName: CloseWindow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1134401309}
+        m_MethodName: DecrementPlateCounter
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -34691,7 +34815,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4740590914769790872}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 28, y: -2.75, z: -20.61}
+  m_LocalPosition: {x: 28, y: -3.4, z: -20.61}
   m_LocalScale: {x: 0.14943746, y: 0.14943746, z: 0.14943746}
   m_Children:
   - {fileID: 4740590912711997028}

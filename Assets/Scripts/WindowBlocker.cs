@@ -24,9 +24,15 @@ public class WindowBlocker : MonoBehaviour
             transform.position += new Vector3(0, openingSpeed  * Time.deltaTime, 0);
         }
     }
-    public void ToggleWindow()
+    
+    public void OpenWindow()
     {
-        isWindowOpended = !isWindowOpended; 
+        isWindowOpended = false;
+    }
+
+    public void CloseWindow()
+    {
+        isWindowOpended = true;
     }
 
 }

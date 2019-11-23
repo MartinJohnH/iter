@@ -27,7 +27,7 @@ public class AutoUsable : MonoBehaviour
     {
         if (!isOneTime || !_hasBeenUsed)
         {
-            if (other.gameObject.layer == Layers.Player || other.gameObject.layer == Layers.Companion)
+            if (other.gameObject.layer == Layers.Player || other.gameObject.layer == Layers.Companion || other.gameObject.layer == Layers.Usable)
             {
                 onStepOn?.Invoke();
                 _audioSource.PlayOneShot(audioClip);
@@ -40,7 +40,7 @@ public class AutoUsable : MonoBehaviour
     {
         if (!isOneTime || !_hasBeenUsed)
         {
-            if (other.gameObject.layer == Layers.Player || other.gameObject.layer == Layers.Companion)
+            if (other.gameObject.layer == Layers.Player || other.gameObject.layer == Layers.Companion || other.gameObject.layer == Layers.Usable)
             {
                 onStepOff?.Invoke();
             }

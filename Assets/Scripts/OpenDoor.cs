@@ -6,10 +6,13 @@ public class OpenDoor : MonoBehaviour
 {
     private bool isDoorLocked = true;
     public float openingSpeed = 5f;
+
+    private AudioSource _audioSource;
     // Start is called before the first frame update
     void Start()
     {
         isDoorLocked = true;
+        _audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -25,5 +28,6 @@ public class OpenDoor : MonoBehaviour
     public void UnlockDoor()
     {
         isDoorLocked = false; 
+        _audioSource.Play();
     }
 }

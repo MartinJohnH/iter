@@ -61,12 +61,13 @@ public class Player : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("trigger");
-        if (Input.GetButtonDown("Fire1"))
+        if (other.gameObject.layer == Layers.Usable)
         {
-            AttemptToUse(other);
+            if (Input.GetButtonDown("Fire1"))
+            {
+                AttemptToUse(other);
+            }
         }
-        
     }
 
     private void AttemptToUse(Collider other)

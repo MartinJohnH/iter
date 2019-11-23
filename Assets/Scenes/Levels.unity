@@ -31521,6 +31521,36 @@ PrefabInstance:
       propertyPath: onUsed.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 46790397}
+    - target: {fileID: 3458371607024486747, guid: 5f28f83146eb444428be2f534ca78535,
+        type: 3}
+      propertyPath: onStepOn.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3458371607024486747, guid: 5f28f83146eb444428be2f534ca78535,
+        type: 3}
+      propertyPath: onStepOn.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3458371607024486747, guid: 5f28f83146eb444428be2f534ca78535,
+        type: 3}
+      propertyPath: onStepOn.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3458371607024486747, guid: 5f28f83146eb444428be2f534ca78535,
+        type: 3}
+      propertyPath: onStepOn.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 46790397}
+    - target: {fileID: 3458371607024486747, guid: 5f28f83146eb444428be2f534ca78535,
+        type: 3}
+      propertyPath: onStepOn.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UnlockDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 3458371607024486747, guid: 5f28f83146eb444428be2f534ca78535,
+        type: 3}
+      propertyPath: onStepOn.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f28f83146eb444428be2f534ca78535, type: 3}
 --- !u!1 &4740590914449200000

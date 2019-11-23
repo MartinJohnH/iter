@@ -242,10 +242,15 @@ public class Companion : MonoBehaviour
     {
         if (other.gameObject.layer == Layers.Blockage)
         {
-            if (!_navMeshAgent.isStopped)
-            {
-                _navMeshAgent.isStopped = true;
-            }
+            _navMeshAgent.enabled = false;
+        }
+    }
+
+    private void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject.layer == Layers.Blockage)
+        {
+            _navMeshAgent.enabled = true;
         }
     }
 }

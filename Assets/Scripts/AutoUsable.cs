@@ -24,7 +24,7 @@ public class AutoUsable : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if ((!isOneTime || !_hasBeenUsed) && _canBeUsed)
         {

@@ -54,6 +54,9 @@ public class Player : MonoBehaviour
                 {
                     bark.Play();
                     _shouldBark = false;
+                } else if (!isRunPressed)
+                {
+                    _shouldBark = true;
                 }
             }
             else

@@ -248,6 +248,7 @@ public class Companion : MonoBehaviour
     {
         if (other.gameObject.layer == Layers.Blockage)
         {
+            _navMeshAgent.enabled = false;
             ToggleTether();
         }
     }
@@ -256,7 +257,7 @@ public class Companion : MonoBehaviour
     {
         if (other.gameObject.layer == Layers.Blockage)
         {
-//            _navMeshAgent.isStopped = true;
+            _navMeshAgent.enabled = true;
         }
     }
 }

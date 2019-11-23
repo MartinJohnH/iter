@@ -33,6 +33,7 @@ public class UIController : MonoBehaviour
     
     private void Start()
     {
+        Cursor.visible = false;
         countdownText.enabled = false;
         gameOverText.enabled = false;
         gameOverPanel.enabled = false;
@@ -42,6 +43,10 @@ public class UIController : MonoBehaviour
 
     private void Update()
     {
+        if(Input.GetKeyDown("escape")) {
+            Application.Quit();
+        }
+        
         if (Input.GetButton("Fire2"))
         {
             _shouldShowTetherHint = false;

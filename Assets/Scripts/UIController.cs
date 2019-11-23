@@ -46,8 +46,9 @@ public class UIController : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown("escape")) {
-            Application.Quit();
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("Scenes/Splash");
         }
         
         if (Input.GetButton("Fire2"))
@@ -191,7 +192,7 @@ public class UIController : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("Scenes/Splash");
     }
 
     private IEnumerator GameOverAnimation()
@@ -219,6 +220,6 @@ public class UIController : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("Scenes/Levels");
     }
 }

@@ -8,9 +8,9 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/Scenes/WalkPrototype.unity
-    guid: c72ea638d3cda44b0b7116d3b7a43008
+  - enabled: 1
+    path: Assets/Scenes/Splash.unity
+    guid: aefd60e0013e441d49d20749961cf06e
   - enabled: 1
     path: Assets/Scenes/Levels.unity
     guid: 7b2cb4a48c02745988d80ea30fb225cf

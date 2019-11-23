@@ -29,11 +29,6 @@ public class GravityListener : MonoBehaviour
         _agent = GetComponent<NavMeshAgent>();
     }
 
-    private void OnDestroy()
-    {
-        _gravityController.unregister(this);
-    }
-
     public void OnGravityChange(Vector3 newGravity)
     {
         _gravity = newGravity;
@@ -66,7 +61,10 @@ public class GravityListener : MonoBehaviour
 
         int currentFrame = 0;
 
-        _animator.SetBool(IsFalling, true);
+        if (_animator)
+        {
+            _animator.SetBool(IsFalling, true);
+        }
 
         _rigidbody.useGravity = false;
         Vector3 normal = transform.up;
@@ -88,8 +86,11 @@ public class GravityListener : MonoBehaviour
         {
             yield return new WaitForFixedUpdate();
         }
-        
-        _animator.SetBool(IsFalling, false);
+
+        if (_animator)
+        {
+            _animator.SetBool(IsFalling, false);
+        }
 
         _rigidbody.freezeRotation = false;
         

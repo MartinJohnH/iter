@@ -460,7 +460,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 26}
+  m_AnchoredPosition: {x: 0, y: 368.97}
   m_SizeDelta: {x: 0, y: 26.32}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &625124315540152056
@@ -549,6 +549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdownSeconds: 30
+  hintTimeSeconds: 5
   countdownText: {fileID: 392764864882574961}
   gameOverText: {fileID: 3120007787143090316}
   gameOverPanel: {fileID: 2867447399975059565}

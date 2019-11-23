@@ -22,8 +22,8 @@ TagManager:
   - Light
   - NonWalkable
   - Blockage
-  - 
-  - 
+  - Floor
+  - Ceiling
   - 
   - 
   - 

@@ -50,11 +50,11 @@ public class GravityListener : MonoBehaviour
     private IEnumerator RotateAndFall(Vector3 newUp, Vector3 newForward)
     {
         _rigidbody.isKinematic = false;
-        _rigidbody.freezeRotation = true;
         
         if (_agent)
         {
             _agent.enabled = false;
+            _rigidbody.freezeRotation = true;
         }
         
         Quaternion rotation = Quaternion.LookRotation(newForward, newUp);
@@ -92,10 +92,11 @@ public class GravityListener : MonoBehaviour
             _animator.SetBool(IsFalling, false);
         }
 
-        _rigidbody.freezeRotation = false;
+        
         
         if (_agent)
         {
+            _rigidbody.freezeRotation = false;
             _rigidbody.isKinematic = true;
             _agent.enabled = true;
         }

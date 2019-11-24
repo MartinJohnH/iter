@@ -41,6 +41,8 @@ public class MusicController : MonoBehaviour
     private AudioMixerSnapshot _dNoLowpass;
     private AudioMixerSnapshot _dLowpass;
 
+    private bool _isSoundOn = true;
+
     private Variation _currentVariation = Variation.A_NoLowpass;
 
     private void Start()
@@ -98,11 +100,32 @@ public class MusicController : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.F3))
+        {
+            ToggleSound();
+        }
+        
         if (!variation.Equals(_currentVariation))
         {
             TransitionTo(variation);
             _currentVariation = variation;
         }
+    }
+
+    public void ToggleSound()
+    {
+        if (_isSoundOn)
+        {
+            mixer.SetFloat("MusicVolume", -80.0f);
+            _isSoundOn = false;
+        }
+        else
+        {
+            mixer.SetFloat("MusicVolume", -16.0f);
+            _isSoundOn = true;
+        }
+
+        
     }
 
     public void ToggleLowpass(bool isEnabled)

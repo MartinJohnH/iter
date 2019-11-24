@@ -244,7 +244,7 @@ public class Companion : MonoBehaviour
         stepSound.Play();
     }
 
-    private void OnCollisionStay(Collision other)
+    private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.layer == Layers.Blockage)
         {

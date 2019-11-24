@@ -37,6 +37,20 @@ public class GravityController : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            SetGravityDirectionDown();
+        }
+
+        if (Input.GetKeyDown(KeyCode.F2))
+        {
+            SetGravityDirectionUp();
+        }
+        
+    }
+
     private void FixedUpdate()
     {
         if (!direction.Equals(_lastDirection))
